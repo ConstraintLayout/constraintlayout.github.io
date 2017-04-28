@@ -38,6 +38,8 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 Taylor's icon designs:
 
-![Icon 1](/assets/images/Icon1_512.png)
-![Icon 2](/assets/images/Icon2_512.png)
-![Icon 3](/assets/images/Icon3_512.png)
+white|blue
+-----|-----
+![Icon 1](/assets/images/Icon1_512.png)|![Icon 1](/assets/images/Icon1_512_blue.png)
+![Icon 2](/assets/images/Icon2_512.png)|![Icon 2](/assets/images/Icon2_512_blue.png)
+![Icon 3](/assets/images/Icon3_512.png)|![Icon 3](/assets/images/Icon3_512_blue.png)
