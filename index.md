@@ -11,7 +11,7 @@ ConstraintLayout.com is a community sourced documentation hub for Android's Cons
 Currently there's a relatively small amount here, but over the coming months we hope to build up a comprehensive documentation resource
 for all things ConstraintLayout.
 
-Currently there is the following categories of information available:
+Currently the following categories of information are available:
 
 {% include navigation.html context="/" %}
 
