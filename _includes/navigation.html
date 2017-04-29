@@ -14,7 +14,7 @@
 
     {% if current == include.context %}
     <li class="{% if page.url contains entry.url %}active{% endif %}">
-        <a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
+        <a href="{{ site.baseurl }}../{{ slug }}">{{ entry.title }}</a>
         {% include navigation.html context=entry.url %}
     </li>
     {% endif %}
