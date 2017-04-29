@@ -1,8 +1,20 @@
-## Welcome to GitHub Pages
+---
+title: Home
+---
 
-You can use the [editor on GitHub](https://github.com/StylingAndroid/sandbox/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+## Welcome to ConstraintLayout.com
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+![Logo](/assets/images/Icon1_128_blue.png){:style="float: left; margin-right: 16px"}
+
+ConstraintLayout.com is a community sourced documentation hub for Android's ConstraintLayout.
+
+Currently there's a relatively small amount here, but over the coming months we hope to build up a comprehensive documentation resource
+for all things ConstraintLayout.
+
+Currently there the following categories of information available:
+
+
+
 
 ### Markdown
 

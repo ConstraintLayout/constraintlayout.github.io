@@ -44,6 +44,19 @@ header h1 {
   letter-spacing: -1px;
 }
 
+header h1:before {
+  content: "";
+  background: url("/assets/images/Icon1_64.png") no-repeat;
+  width: 64px;
+  height: 64px;
+  display: block;
+  float: left;
+  margin-top: -4px;
+  padding-right: 8px;
+  //margin-left: -100px;
+  //padding-right: 36px;
+}
+
 header h2 {
   width: 540px;
   margin-top: 0;
@@ -113,6 +126,7 @@ header a.button {
   top: 0;
   right: 0;
   background: transparent url(../images/github-button.png) 0 0 no-repeat;
+  margin-top: -8px;
 }
 aside a.button {
   display: block;
@@ -152,6 +166,11 @@ pre code {
 
 ul, ol, dl {
   margin-bottom: 20px;
+}
+
+.active  {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 
@@ -363,10 +382,26 @@ footer a:hover {
     width: 340px;
   }
   header h1 {
-    font-size: 60px;
+    font-size: 34px;
+  }
+  header h1:before {
+    content: "";
+    background: url("/assets/images/Icon1_48.png") no-repeat;
+    width: 48px;
+    height: 48px;
+    display: block;
+    float: left;
+    margin-top: -7px;
   }
   header h2 {
     font-size: 30px;
+  }
+  header a.button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent url(../images/github-button.png) 0 0 no-repeat;
+    margin-top: -22px;
   }
   #main-content {
     width: 490px;
@@ -398,7 +433,16 @@ footer a:hover {
     width: 100%;
   }
   header h1 {
-    font-size: 48px;
+    font-size: 32px;
+  }
+  header h1:before {
+    content: "";
+    background: url("/assets/images/Icon1_48.png") no-repeat;
+    width: 48px;
+    height: 48px;
+    display: block;
+    float: left;
+    margin-top: -7px;
   }
   header h2 {
     font-size: 24px;
