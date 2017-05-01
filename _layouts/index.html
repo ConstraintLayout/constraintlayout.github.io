@@ -8,8 +8,25 @@
 {% include header.html %}
 <div id="content-wrapper">
     <div class="inner clearfix">
+        <section id="main-title">
+            <h1>{{ page.title }}</h1>
+        </section>
         <section id="main-content">
             {{ content }}
+            <ul>
+                {% assign entries = site.pages | sort: "path" %}
+                {% for entry in entries %}
+                {% if entry.layout == 'content' %}
+                {% capture slug %}{{ entry.url | split: "/" | last }}{% endcapture %}
+                {% capture current %}{{ entry.url | remove: slug | append: "/" | replace: "//", "/" }}{% endcapture %}
+                {% if current == page.url %}
+                    <li class="{% if page.url contains entry.url %}active{% endif %}">
+                        <a href="{{ entry.url | absolute_url }}">{{ entry.title }}</a>
+                    </li>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+            </ul>
         </section>
 
         {% include sidebar.html %}
