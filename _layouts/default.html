@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+{% include header.html %}
+
+<div id="content-wrapper">
+    <div class="inner clearfix">
+        <section id="main-content">
+            {{ content }}
+        </section>
+
+        {% include sidebar.html %}
+    </div>
+</div>
+
+{% include analytics.html %}
+</body>
+</html>

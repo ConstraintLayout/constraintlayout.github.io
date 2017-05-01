@@ -1,8 +1,20 @@
-## Welcome to GitHub Pages
+---
+title: Home
+---
 
-You can use the [editor on GitHub](https://github.com/StylingAndroid/sandbox/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+## Welcome to ConstraintLayout.com
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+![Logo](/assets/images/Icon1_128_blue.png){:style="float: left; margin-right: 16px"}
+
+ConstraintLayout.com is a community sourced documentation hub for Android's ConstraintLayout.
+
+Currently there's a relatively small amount here, but over the coming months we hope to build up a comprehensive documentation resource
+for all things ConstraintLayout.
+
+Currently the following categories of information are available:
+
+{% include navigation.html context="/" %}
+
 
 ### Markdown
 
@@ -35,3 +47,11 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+Taylor's icon designs:
+
+Number|white|blue
+------|-----|-----
+1|![Icon 1](/assets/images/Icon1_512.png)|![Icon 1](/assets/images/Icon1_512_blue.png)
+2|![Icon 2](/assets/images/Icon2_512.png)|![Icon 2](/assets/images/Icon2_512_blue.png)
+3|![Icon 3](/assets/images/Icon3_512.png)|![Icon 3](/assets/images/Icon3_512_blue.png)
