@@ -2,7 +2,6 @@
 layout: content
 title: LinearLayout
 author: Mark Allison
-group: layouts
 ---
 
 ### Basic Behaviour
