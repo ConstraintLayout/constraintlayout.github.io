@@ -8,13 +8,9 @@
 {% include header.html %}
 <div id="content-wrapper">
     <div class="inner clearfix">
-        <section id="main-title">
-            <h1>{{ page.title }}</h1>
-        </section>
-        <section id="main-author">
-            <h3>{{ page.author | default: 'No Author Set in page header' }}</h3>
-        </section>
         <section id="main-content">
+            <h1>{{ page.title }}</h1>
+            <h3>{{ page.author | default: 'No Author Set in page header' }}</h3>
             {{ content }}
         </section>
 
