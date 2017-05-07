@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+{% include header.html %}
+<div id="content-wrapper">
+    <div class="inner clearfix">
+        <section id="main-content">
+            <h1>{{ page.forename }} {{ page.surname}}</h1>
+            {% unless page.twitter == null %}
+              Twitter: <a href="https://twitter.com/{{ page.twitter }}" target="_blank">{{ page.twitter }}</a><br/>
+            {% endunless %}
+            {% unless page.plus == null %}
+              Google+: <a href="https://plus.google.com/+{{ page.plus }}" target="_blank">+{{ page.plus }}</a><br/>
+            {% endunless %}
+            {% unless page.facebook == null %}
+              Facebook: <a href="https://facebook.com/{{ page.facebook }}" target="_blank">{{ page.facebook }}</a><br/>
+            {% endunless %}
+            {% unless page.github == null %}
+              GitHub: <a href="https://github.com/{{ page.github }}" target="_blank">{{ page.github }}</a><br/>
+            {% endunless %}
+            {% unless page.web == null %}
+              Web: <a href="{{ page.web }}" target="_blank">{{ page.web }}</a><br/>
+            {% endunless %}
+            <br/>
+            {{ content }}
+        </section>
+
+        {% include sidebar.html %}
+    </div>
+</div>
+
+{% include analytics.html %}
+</body>
+</html>
