@@ -258,6 +258,13 @@ form {
   color: #9ddcff;
 }
 
+#main-content h3.author:before {
+  content: "Author: ";
+  padding-right: 0.3em;
+  margin-left: -0.65em;
+  color: #474747;
+}
+
 #main-content h4 {
   margin-bottom: 8px;
   font-family: $header-font;

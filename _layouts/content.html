@@ -10,7 +10,15 @@
     <div class="inner clearfix">
         <section id="main-content">
             <h1>{{ page.title }}</h1>
-            <h3>{{ page.author | default: 'No Author Set in page header' }}</h3>
+            {% unless page.author == null %}
+            {% assign contributors = site.pages | where: "layout", "contributor" %}
+            {% for contributor in contributors %}
+            {% assign contributor_id = contributor.name | remove: ".md" %}
+            {% if contributor_id == page.author %}
+            <h3 class="author"><a href="{{ contributor_id | append: ".html" | prepend: "contributors/" | relative_url }}">{{ contributor.forename }} {{contributor.surname }}</a></h3>
+            {% endif %}
+            {% endfor %}
+            {% endunless %}
             {{ content }}
         </section>
 

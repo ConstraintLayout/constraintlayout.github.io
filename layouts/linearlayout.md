@@ -1,7 +1,7 @@
 ---
 layout: content
 title: LinearLayout
-author: Mark Allison
+author: mark
 ---
 
 ### Basic Behaviour
