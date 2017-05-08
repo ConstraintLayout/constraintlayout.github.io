@@ -18,6 +18,7 @@ title: Contributors
   </ul>
 {% endif %}
 {% endfor %}
+
 ## Authors
 {% for contributor_page in contributor_pages %}
 {% if contributor_page.admin != true %}
