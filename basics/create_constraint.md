@@ -40,7 +40,8 @@ to the parent.
 
  ![baseline](/assets/images/basics/baseline.png)
 
-The sausage-like shape is the baseline anchor point.
+The sausage-like shape is the baseline anchor point and we can create constraints from this in exactly the same way
+as we are about to see with the four edge anchor points.
 
 The other button below the _TextView_ (the one containing the 'x') will remove all constraints.
 
