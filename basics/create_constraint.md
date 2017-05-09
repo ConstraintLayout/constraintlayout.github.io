@@ -62,7 +62,7 @@ empty):
 
 The reason for this is that constraints are one way (unless we're talking about chains, which are a special case). So
 the constraint in question is attached to `textView2`, and will position it relative to `textView`.
-Since it is only attached to `textView2`, it has no direct influence on where `textView` is positioned
+Since it is only attached to `textView2`, it has no direct influence on where `textView` is positioned.
 
 Now that we know how to create a constraint between `Views` how do we go about creating a constraint to the parent
 layout itself? That is simply a case of dragging the anchor point to the appropriate edge of the parent:
