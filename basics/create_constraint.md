@@ -46,25 +46,26 @@ as we are about to see with the four edge anchor points.
 The other button below the _TextView_ (the one containing the 'x') will remove all constraints.
 
 To create a constraint we simple need to grab an anchor point of one view, and drag it to the anchor point of another.
-Here we have added a second _TextView_ which has a left constraint to the parent, and we create a new constraint from
-it's top to the bottom of the first _TextView_. This will position the second _TextView_ below the first one:
+Here we have added a second _TextView_ (with ID `textView2`) which has a left constraint to the parent, and we create a
+new constraint from it's top to the bottom of the first _TextView_ (which has ID `textView`).
+This will position the second _TextView_ below the first one:
 
 ![create_constraint](../assets/images/basics/create_constraint.gif)
 
-How about if we want to create a constraint to the parent layout itself? that is simply a case of dragging the anchor
-point to the appropriate edge of the parent:
-
-![create parent constraint](/assets/images/basics/create_parent_constraint.gif)
-
 One thing worth noting is that while we have created a constraint from the top of `textView2` to the bottom of
 `textView`, if we select both of the _TextViews_ then we only see a constraint is attached to the top of `textView2`
-and there is no constraint associated with `textView`:
+and there is no constraint associated with `textView` (the bottom anchor point of `textView` is still empty):
 
 ![unidirectional](../assets/images/basics/unidirectional.png)
 
 The reason for this is that constraints are one way (unless we're talking about chains which are a special case). So
 the constraint in question is attached to `textView2`, and will position it relative to `textView`. It controls how
 `textView2` will be positioned relative to `textView` so has no direct influence on where `textView` is positioned.
+
+Now that we know how to create a constraint between _Views_ how do we go about creating a constraint to the parent
+layout itself? That is simply a case of dragging the anchor point to the appropriate edge of the parent:
+
+![create parent constraint](/assets/images/basics/create_parent_constraint.gif)
 
 ### Creating constraints in XML
 
