@@ -19,6 +19,9 @@
             {% endif %}
             {% endfor %}
             {% endunless %}
+            {% unless page.as_version == null %}
+            Note: All of the examples in this article have been created using Android Studio {{ page.as_version }}. You may see differences if you are using a different version.
+            {% endunless %}
             {{ content }}
         </section>
 
