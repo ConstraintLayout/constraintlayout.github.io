@@ -34,7 +34,7 @@ for this anchor point; and the ones on the rightand bottom edge are empty which 
 defined for them. So we can see how the position of the _TextView_ has been defined by aligning the top and left edges
 to the parent.
 
- Any _View_s which subclass _TextView_ also have an additional type of anchor point: the baseline. This enables us to
+ Any _Views_ which subclass _TextView_ also have an additional type of anchor point: the baseline. This enables us to
  align the baseline of the text in the _TextView_ as well. We can view this by clicking the 'ab'  button below the
  _TextView_:
 
@@ -56,7 +56,7 @@ point to the appropriate edge of the parent:
 ![create parent constraint](/assets/images/basics/create_parent_constraint.gif)
 
 One thing worth noting is that while we have created a constraint from the top of `textView2` to the bottom of
-`textView`, if we select both of the _TextView_s then we only see a constraint is attached to the top of `textView2`
+`textView`, if we select both of the _TextViews_ then we only see a constraint is attached to the top of `textView2`
 and there is no constraint associated with `textView`:
 
 ![unidirectional](/assets/images/basics/unidirectional.png)
