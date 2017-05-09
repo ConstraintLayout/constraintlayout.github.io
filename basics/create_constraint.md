@@ -67,7 +67,7 @@ Since it is only attached to `textView2`, it has no direct influence on where `t
 Now that we know how to create a constraint between `Views` how do we go about creating a constraint to the parent
 layout itself? That is simply a case of dragging the anchor point to the appropriate edge of the parent:
 
-![create parent constraint](/assets/images/basics/create_parent_constraint.gif)
+![create parent constraint](../assets/images/basics/create_parent_constraint.gif)
 
 ### Creating constraints in XML
 
