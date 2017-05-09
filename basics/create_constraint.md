@@ -15,14 +15,14 @@ The easiest way to learn how to create constraints is using the visual editor in
 here will show how the blueprint view represents things. Let's start by looking at a simple _TextView_ in the blueprint
 view:
 
-![blueprint](/assets/images/basics/blueprint.png)
+![blueprint](../assets/images/basics/blueprint.png)
 
 The _TextView_ should be fairly obvious, and the two arrows show some existing constraints on this _TextView_ which
 align the left and top edges to the parent _ConstraintLayout_. We'll look at how to create this in a little while. We
 can also see the 16dp margins which will add some space between the parent _ConstraintLayout_ and the bounds of the
 _TextView_. If we select the _TextView_ we will see the sizing and anchor points:
 
-![anchor_points](/assets/images/basics/anchor_points.png)
+![anchor_points](../assets/images/basics/anchor_points.png)
 
 The squares on the corners are the resizing points and we can drag these to resize the _TextView_. These are not as
 useful as they may first appear because using them will result in a fixed size of the _TextView_ and we will normally
@@ -38,7 +38,7 @@ to the parent.
  align the baseline of the text in the _TextView_ as well. We can view this by clicking the 'ab'  button below the
  _TextView_:
 
- ![baseline](/assets/images/basics/baseline.png)
+ ![baseline](../assets/images/basics/baseline.png)
 
 The sausage-like shape is the baseline anchor point and we can create constraints from this in exactly the same way
 as we are about to see with the four edge anchor points.
@@ -49,7 +49,7 @@ To create a constraint we simple need to grab an anchor point of one view, and d
 Here we have added a second _TextView_ which has a left constraint to the parent, and we create a new constraint from
 it's top to the bottom of the first _TextView_. This will position the second _TextView_ below the first one:
 
-![create_constraint](/assets/images/basics/create_constraint.gif)
+![create_constraint](../assets/images/basics/create_constraint.gif)
 
 How about if we want to create a constraint to the parent layout itself? that is simply a case of dragging the anchor
 point to the appropriate edge of the parent:
@@ -60,7 +60,7 @@ One thing worth noting is that while we have created a constraint from the top o
 `textView`, if we select both of the _TextViews_ then we only see a constraint is attached to the top of `textView2`
 and there is no constraint associated with `textView`:
 
-![unidirectional](/assets/images/basics/unidirectional.png)
+![unidirectional](../assets/images/basics/unidirectional.png)
 
 The reason for this is that constraints are one way (unless we're talking about chains which are a special case). So
 the constraint in question is attached to `textView2`, and will position it relative to `textView`. It controls how
@@ -113,4 +113,4 @@ namespace).
 The final things we'll cover here is how to delete a constraint. In XML it is simply a case of deleting the attribute
 which defines the constraint, but in the editor we simply click on the anchor point:
 
-![delete constraint](/assets/images/basics/delete_constraint.gif)
+![delete constraint](../assets/images/basics/delete_constraint.gif)
