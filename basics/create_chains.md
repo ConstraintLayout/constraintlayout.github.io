@@ -65,7 +65,9 @@ way of doing this in the editor, but we can use the properties view to change at
 
 To apply a weight to a specific _View_ we must first select the _View_ in the editor, and then 
 (if the _View_ is in a horizontal chain) specify a `android:layout_width="0dp"` and 
-`app:layout_constraintHorizontal_weight="1"`.
+`app:layout_constraintHorizontal_weight="1"`:
+
+![Weighted Chain Properties](../assets/images/basics/chains_weight_properties.png)
 
 Note how the appearance of the _View_ changes in the blueprint view - the top & bottom edges change from straight lines 
 in to become accordion-like - this gives a visual indication of a weighted _View_.
