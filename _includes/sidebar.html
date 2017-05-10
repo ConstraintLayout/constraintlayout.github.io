@@ -1,7 +1,7 @@
 <aside id="sidebar">
     {% include navigation.html context="/" %}
     
-    <p><a href="{{ 'coonduct.html' | prepend: site.baseurl }}">Code of Conduct</a></p>
+    <p><a href="{{ '/conduct.html' | absolute_url }}">Code of Conduct</a></p>
 
     {% if site.show_downloads %}
     <a href="{{ site.github.zip_url }}" class="button">
