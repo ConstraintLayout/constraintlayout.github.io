@@ -6,7 +6,7 @@ twitter: seebrock3r
 plus: SebastianoPoggi
 github: rock3r
 web: https://tips.seebrock3r.me
-photo: https://pbs.twimg.com/profile_images/820587060566327297/mHOGmRf9.jpg
+photo: photos/seb.jpg
 layout: contributor
 ---
 
