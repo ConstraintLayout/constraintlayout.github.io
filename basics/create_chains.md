@@ -79,6 +79,8 @@ possible space. If you attempt to use weights in a `packed` chain then the weigh
 ![Packed Weighted Chain](../assets/images/basics/chains_packed_weight.png)
 
 #### Chains in XML
+It would be reasonable to assume that dedicated attributes exist in order to specify chains in XML, but this is
+not, in fact, the case. Instead the existing constraint attributes are combined. 
 To create chains in XML the chain constraints are simply two way, complementary constraints. Here is the XML for the 
 initial chain creation that we looked at earlier:
 
