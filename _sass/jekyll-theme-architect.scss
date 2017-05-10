@@ -361,6 +361,29 @@ footer a:hover {
   color: #444;
 }
 
+.divTable{
+  display: table;
+  width: 100%;
+}
+.divTableRow {
+  display: table-row;
+}
+.divTableCell {
+  border: none;
+  display: table-cell;
+  padding: 8pt;
+}
+.divTableBody {
+  display: table-row-group;
+}
+
+img.profilePic {
+  width: 60pt;
+  /* height: 40pt; */
+  border-radius: 50%;
+  margin: auto;
+}
+
 /* MISC */
 .clearfix:after {
   display: block;
