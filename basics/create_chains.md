@@ -17,12 +17,12 @@ wish to chain together, and then select either 'Center Horizontally' to create a
  
  The first thing worth mentioning is that the two views at the ends of the chain (in this case the leftmost and 
  rightmost views) already have constraints from their left & right edges respectively, to the parent. The creation 
- of the chain dimply defines the iter-relationships between the members of the chain. If we look at the chain that we
+ of the chain simply defines the inter-relationships of the members of the chain. If we look at the chain that we
  have just created, there are a couple of visual representations that are worth explaining:
  
 ![Create a chain](../assets/images/basics/chains_create.png)
 
-Firstly not that the two connections between resemble a chain (these are the chain constraints which we have just 
+Firstly note that the two connections between the views resemble a chain (these are the chain constraints which we have just 
 created), and the outer two connections (between the leftmost and rightmost views and the parent) resemble springs.
 These outermost connections denote the "chain mode" which has been applied to the chain. The "chain mode" specifies
 how the chain will fill the available space, and we can cycle between the three available modes using the "cycle chain 
@@ -50,7 +50,7 @@ slightly), and then centres the group within the available space:
 
 ![Packed Chain](../assets/images/basics/chains_packed.png)
 
-With a packed chain, the behaviour can be further controlled by altering the `bias` value - in this
+With a packed chain, the positioning of the packed views can be further controlled by altering the `bias` value - in this
 example the `bias` is set to `0.5` which will centre things. But altering this value can change the position of the 
 packed chain:
 
@@ -58,7 +58,7 @@ packed chain:
 
 #### Spread Chain Weights
 One really useful feature of both `spread` and `spread_inside` chains is that we can apply weights to individual 
-members of the chain and we get very similar behaviour to weights in `LinearLayout`. There is currently not a direct 
+members of the chain and we get very similar behaviour to weights in `LinearLayout`. Currently there is no direct 
 way of doing this in the editor, but we can use the properties view to change attributes manually.
 
 ![Weighted Chain](../assets/images/basics/chains_weight.png)
@@ -69,7 +69,7 @@ To apply a weight to a specific `View` we must first select the `View` in the ed
 
 ![Weighted Chain Properties](../assets/images/basics/chains_weight_properties.png)
 
-Note how the appearance of the `View` changes in the blueprint view - the top & bottom edges change from straight lines 
+Note how the appearance of the `View` changes in the blueprint view - the top and bottom edges change from straight lines 
 in to become accordion-like - this gives a visual indication of a weighted `View`.
 
 It is also worth noting that weights do not play nicely if we try to use them in `packed` mode. Whereas `spread` and
@@ -78,10 +78,9 @@ possible space. If you attempt to use weights in a `packed` chain then the weigh
  
 ![Packed Weighted Chain](../assets/images/basics/chains_packed_weight.png)
 
-
 #### Chains in XML
 To create chains in XML the chain constraints are simply two way, complementary constraints. Here is the XML for the 
-initial chain creation gif that we looked at earlier:
+initial chain creation that we looked at earlier:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -130,16 +129,16 @@ initial chain creation gif that we looked at earlier:
 </android.support.constraint.ConstraintLayout>
 ```
 
-On `textView` there is `app:layout_constraintEndToStartOf="@+id/textView2"` and on `textVew2` there is 
+On `textView` there is `app:layout_constraintEndToStartOf="@+id/textView2"`; and on `textVew2` there is 
 `app:layout_constraintStart_toEndOf="@+id/textView"` - essentially creating two constraints between the same pair of 
-anchor points in opposite directions. It is this which indicates a chain.
+anchor points in opposite directions. It is this which defines a chain.
 
-Also on `textView` there is `app:layout_constraintHorizontal_chainStyle="spread"` which specifies `spread` mode; you
+Also on `textView` there is `app:layout_constraintHorizontal_chainStyle="spread"` which specifies the `spread` mode; you
 can manually set this to `spread_inside` or `packed` to specify different chain modes. This must always be done on the 
 `View` at the head of the chain - in other words the first item in the chain.
  
 We can set a bias on the chain by setting `app:layout_constraintHorizontal_bias="0.75"` with a value between 
 `0.0` - `1.0`.
 
-Finally, we can use weights by specifying `android:layout_width="0dp"` and then 
+Finally, we can define weights by specifying `android:layout_width="0dp"` and then 
 `app:layout_constraintHorizontal_weight="1"`. 
