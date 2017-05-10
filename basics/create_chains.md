@@ -129,7 +129,7 @@ initial chain creation that we looked at earlier:
 </android.support.constraint.ConstraintLayout>
 ```
 
-On `textView` there is `app:layout_constraintEndToStartOf="@+id/textView2"`; and on `textVew2` there is 
+On `textView` there is `app:layout_constraintEndToStartOf="@+id/textView2"`; and on `textView2` there is 
 `app:layout_constraintStart_toEndOf="@+id/textView"` - essentially creating two constraints between the same pair of 
 anchor points in opposite directions. It is this which defines a chain.
 
