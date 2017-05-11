@@ -24,7 +24,7 @@ One solution to this is to subclass `ImageView` and override `onMeasure()` to ap
  
 ![Dimension Ratio](../assets/images/basics/dimension_adjust.gif)
   
-  ### dimensionRatio XML
+### dimensionRatio XML
   
   The XML for this is:
   
