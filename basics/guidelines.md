@@ -36,7 +36,7 @@ It is worth noting that the `Guideline` will snap to certain posistions - at eit
 
 #### Using guidelines
 
-Now that we know how to create the different types of guideline, and adjust their positions, what can we actually _do_ with them? We can use them as any other view as a constraint target - in other words we can create a constraint from an anchor point of any view in the layout and align it to the guideline. If we then move the guideline, then the view will move with it:
+Now that we know how to create the different types of guideline, and adjust their positions, what can we actually _do_ with them? We can use them as any other view as a constraint target - in other words we can create a constraint from an anchor point of any view in the layout and align it to the guideline. If we then move the guideline, the view will move with it:
 
 ![Guideline Constraints](../assets/images/basics/guideline_constraints.gif)
 
