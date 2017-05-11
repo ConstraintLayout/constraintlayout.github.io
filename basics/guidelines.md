@@ -18,7 +18,7 @@ In the current version of Android Studio you will not see the newly created guid
 
 #### Types of Guideline
 
-There are three disticnt types of guideline. By default a guideline will have a fixed offset from the left edge of the parent `ConstraintLayout` (specified in `dp`). The guideline that we just created is offfset from the left edge by `16dp`. The second type of guideline is offset from the _right_ edge; and the final type of guideline is positioned at a fraction of the width of the parent `ConstraintLayout`. There is an indicator at the edge of the guideline which shows the type, and we can cycle between the types by repeatedly clicking on this:
+There are three disticnt types of guideline. By default a guideline will have a fixed offset from the left edge of the parent `ConstraintLayout` (specified in `dp`). The guideline that we just created is offfset from the start edge by `16dp` (I'm refering to 'start' rather than 'left' because  it's good practise to keep our layout friendly towards right-to-left languages). The second type of guideline is offset from the _end_ edge; and the final type of guideline is positioned at a fraction of the width of the parent `ConstraintLayout`. There is an indicator at the edge of the guideline which shows the type, and we can cycle between the types by repeatedly clicking on this:
 
 ![Cycle Guideline Types](../assets/images/basics/guideline_cycle.gif)
 
@@ -29,6 +29,8 @@ The left and right offset types are useful if we want to set up keylines, wherea
 Once we have a guideline set up we can adjust its posistion by simple dragging the line (as opposed to the type indicator):
 
 ![Position Guideline](../assets/images/basics/guideline_position.gif)
+
+It is worth noting that the `Guideline` will snap to certain posistions - at either of the default keylines (offset 8dp from either edge), and at 50% of the parent width. You can see that happening in the example.
 
 #### Using guidelines
 
@@ -43,4 +45,36 @@ For those of an inquisitive nature, let's take a look at how Gudelines are actua
 
 #### Guideline XML
 
-TODO: Add guideline XML
+So let's take a look at the XML for a guideline and a view  constrained to it:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="TextView"/>
+
+</android.support.constraint.ConstraintLayout>
+```
+
+The `Guideline` itself  has an  `app:orientation="vertical"` attribute, which obviously declares a vertical `Guideline` (we could also specify a value of `horizontal` here. It also has `app:layout_constraintGuide_begin="16dp"` which positions the guideline 16dp from the start edge of the parent `ConstraintLayout` (Once again, I'll use 'start' rather than 'left'). To position the `Guideline` relative to the end (or right) edge we would use `app:layout_constraintGuide_end="..."` instead; and for  a fractional `Guideline` we would use `app:layout_constraintGuide_percent="0.5"` where the value is a number beween 0.0 and 1.0 which dictates the fractional offset.
+
+If we now look at the `TextView` we can see that we can create constraints to the `Guideline` in exactly the same way as we can with any other type of `View`. That's because a `Guideline` _is_ a `View` itself.
