@@ -1,7 +1,10 @@
 ---
 layout: content
-title: Creating Chains
+title: Chains
 author: mark
+as_version: 2.4 alpha 7
+cl_version: 1.0.2
+order: 2
 ---
 ### What are chains?
 Chains are a specific kind of constraint which allow us to share space between the views within the chain and control

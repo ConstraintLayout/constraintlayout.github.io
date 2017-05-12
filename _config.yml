@@ -1,1 +1,12 @@
 title: ConstraintLayout
+defaults:
+  -
+    scope:
+     path: ""
+    values:
+      index: true
+  -
+    scope:
+      path: "contributors"
+    values:
+      index: false

@@ -1,17 +1,14 @@
 {% capture html %}
-<ul>
-    {% assign entries = site.pages | sort: "path" %}
+<ul class="sub">
+    {% assign entries = site.pages | sort: "path" | sort: "order" %}
     {% for entry in entries %}
 
     {% capture slug    %}{{ entry.url | split: "/"   | last                       }}{% endcapture %}
     {% capture current %}{{ entry.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
 
-    {% if current == include.context and entry.index != false %}
-    <li class="{% if page.url contains entry.url %}active{% endif %}">
-        <a href="{{ slug | absolute_url }}">{{ entry.title }}</a>
-        {% if page.url contains entry.url %}
-            {% include submenu.html context=entry.url %}
-        {% endif %}
+    {% if entry.url != include.context and entry.url contains include.context  %}
+    <li class="{% if page.url == entry.url %}active{% endif %}">
+        <a href="{{ entry.url | absolute_url }}">{{ entry.title }}</a>
     </li>
     {% endif %}
     {% endfor %}

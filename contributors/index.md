@@ -1,5 +1,6 @@
 ---
 title: Contributors
+index: false
 ---
 
 # Contributors

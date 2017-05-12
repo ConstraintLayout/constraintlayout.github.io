@@ -19,9 +19,15 @@
             {% endif %}
             {% endfor %}
             {% endunless %}
-            {% unless page.as_version == null %}
-            Note: All of the examples in this article have been created using Android Studio {{ page.as_version }}. You may see differences if you are using a different version.
-            {% endunless %}
+            {% if page.cl_version != null and page.as_version == null %}
+            Note: All of the examples in this article have been created using <code class="highlighter-rouge">ConstraintLayout</code> V{{ page.cl_version }}. You may see differences if you are using a different version.
+            {% endif %}
+            {% if page.cl_version == null and page.as_version != null %}
+            Note: All of the examples in this article have been created using Android Studio V{{ page.as_version }}. You may see differences if you are using a different version.
+            {% endif %}
+            {% if page.as_version != null and page.cl_version != null %}
+            Note: All of the examples in this article have been created using Android Studio V{{ page.as_version }} and <code class="highlighter-rouge">ConstraintLayout</code> V{{ page.cl_version }}. You may see differences if you are using different versions.
+            {% endif %}
             {{ content }}
         </section>
 
