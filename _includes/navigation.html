@@ -6,7 +6,7 @@
     {% capture slug    %}{{ entry.url | split: "/"   | last                       }}{% endcapture %}
     {% capture current %}{{ entry.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
 
-    {% if current == include.context %}
+    {% if current == include.context and entry.title != "Contributors" %}
     <li class="{% if page.url contains entry.url %}active{% endif %}">
         <a href="{{ slug | absolute_url }}">{{ entry.title }}</a>
         {% include navigation.html context=entry.url %}
