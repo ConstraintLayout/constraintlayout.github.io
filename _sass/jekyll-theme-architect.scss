@@ -21,6 +21,7 @@ p {
 a {
   color: #2879d0;
 }
+
 a:hover {
   color: #2268b2;
 }
@@ -117,10 +118,12 @@ a.button {
   line-height: 1.2;
   color: #fff;
 }
+
 a.button small {
   display: block;
   font-size: 11px;
 }
+
 header a.button {
   position: absolute;
   top: 0;
@@ -128,6 +131,7 @@ header a.button {
   background: transparent url(../images/github-button.png) 0 0 no-repeat;
   margin-top: -8px;
 }
+
 aside a.button {
   display: block;
   width: 138px;
@@ -157,6 +161,7 @@ pre {
   background: #fff;
   border: solid 1px #f2f2f2;
 }
+
 pre code {
   padding: 0;
   color: #2879d0;
@@ -164,15 +169,14 @@ pre code {
   border: none;
 }
 
-ul, ol, dl {
+ol, dl {
   margin-bottom: 20px;
 }
 
-.active  {
+li.active > a {
   font-weight: bold;
   text-decoration: underline;
 }
-
 
 /* COMMON STYLES */
 
@@ -205,7 +209,6 @@ form {
 
 }
 
-
 /* GENERAL ELEMENT TYPE STYLES */
 
 #main-content h1 {
@@ -234,6 +237,7 @@ form {
   color: #474747;
   text-indent: 4px;
 }
+
 #main-content h2:before {
   padding-right: 0.3em;
   margin-left: -1.5em;
@@ -288,6 +292,7 @@ h4:before {
   color: #474747;
   text-indent: 3px;
 }
+
 h5:before {
   padding-right: 0.3em;
   margin-left: -3.2em;
@@ -302,6 +307,7 @@ h5:before {
   color: #474747;
   text-indent: 3px;
 }
+
 h6:before {
   padding-right: 0.3em;
   margin-left: -3.7em;
@@ -334,6 +340,23 @@ ul {
   padding-left: 20px;
 }
 
+ul.sub {
+  list-style-position: inside;
+  list-style: square;
+  padding-left: 20px;
+  text-decoration: none;
+}
+
+ul.sub li {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+ul.sub li.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 ol {
   list-style-position: inside;
   list-style: decimal;
@@ -357,22 +380,26 @@ footer {
 footer a {
   color: #666;
 }
+
 footer a:hover {
   color: #444;
 }
 
-.divTable{
+.divTable {
   display: table;
   width: 100%;
 }
+
 .divTableRow {
   display: table-row;
 }
+
 .divTableCell {
   border: none;
   display: table-cell;
   padding: 8pt;
 }
+
 .divTableBody {
   display: table-row-group;
 }
@@ -393,15 +420,24 @@ img.profilePic {
   content: '.';
 }
 
-.clearfix {display: inline-block;}
-* html .clearfix {height: 1%;}
-.clearfix {display: block;}
+.clearfix {
+  display: inline-block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}
 
 /* #Media Queries
 ================================================== */
 
 /* Smaller than standard 960 (devices and browsers) */
-@media only screen and (max-width: 959px) { }
+@media only screen and (max-width: 959px) {
+}
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
@@ -526,7 +562,9 @@ img.profilePic {
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) { }
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+}
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) { }
+@media only screen and (max-width: 479px) {
+}
