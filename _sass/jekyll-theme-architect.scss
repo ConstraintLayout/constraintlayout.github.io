@@ -1,8 +1,8 @@
 @import "normalize";
 @import "rouge-github";
 
-$header-font: 'Work Sans', 'Helvetica Neue', Helvetica, Arial, serif;
-$body-font: Lato, 'Helvetica Neue', Helvetica, Arial, serif;
+$header-font: 'Product Sans', 'Roboto', sans-serif;
+$body-font: 'Roboto', Lato, sans-serif;
 
 /* LAYOUT STYLES */
 body {
@@ -94,9 +94,14 @@ aside#sidebar {
   width: 200px;
   min-height: 504px;
   padding-left: 20px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.3;
   background: transparent url(../images/sidebar-bg.jpg) 0 0 no-repeat;
+}
+
+aside#sidebar h3 {
+  font-family: $header-font;
+  font-size: 15px;  
 }
 
 aside#sidebar p.repo-owner,
