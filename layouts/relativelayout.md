@@ -7,7 +7,7 @@ cl_version: 1.0.2
 ---
 
 ### Behaviour
-A `RelativeLayout` is used to layout views based on some forms of relations each have relative to the other. If this sounds familiar, it is because a `RelativeLayout` is basically a more basic version of a `ConstraintLayout`, and many of the concepts of the latter map directly to `RelativeLayout`. In fact, one can think of a `ConstraintLayout` as a `RelativeLayout` on steroids; this is a good mental model to use to get acquainted to the `ConstraintLayout` if you have experience using the "old-school" Android layouts.
+A `RelativeLayout` is used to layout views based on some forms of relations each have relative to the other. If this sounds familiar, it is because a `RelativeLayout` is basically a more basic version of a `ConstraintLayout`, and many of the concepts of the latter map directly to `RelativeLayout`. In fact, one can think of a `ConstraintLayout` as a `RelativeLayout` on steroids; this is a good mental model to use to get acquainted to `ConstraintLayout` if you have experience using the "old-school" Android layouts.
 
 ### In the editor
 Since the `RelativeLayout` is all about the relations between views, creating the corresponding constraints is as easy as literally creating the same relations you want. For example, to create an "X is above Y" constraint, which would be expressed by a `android:layout_above` attribute:
