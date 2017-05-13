@@ -4,6 +4,7 @@
 $header-font: 'Work Sans', 'Helvetica Neue', Helvetica, Arial, serif;
 $body-font: Lato, 'Helvetica Neue', Helvetica, Arial, serif;
 
+
 /* LAYOUT STYLES */
 body {
   font-family: $body-font;
@@ -94,9 +95,14 @@ aside#sidebar {
   width: 200px;
   min-height: 504px;
   padding-left: 20px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.3;
   background: transparent url(../images/sidebar-bg.jpg) 0 0 no-repeat;
+}
+
+aside#sidebar h3 {
+  font-family: $header-font;
+  font-size: 15px;  
 }
 
 aside#sidebar p.repo-owner,
@@ -200,9 +206,10 @@ th {
 
 td {
   font-weight: 300;
-  text-align: center;
+  text-align: left;
   border: 1px solid #ebebeb;
 }
+
 
 form {
   padding: 20px;
