@@ -17,7 +17,7 @@ The first use-case of `PercentLayout` that we'll cover is specifying the width o
 
 Now we just need to constrain a view to the `start` edge of the parent, and the guideline. I am using `start` in favour of `left` to ensure that we behave nicely for RTL languages.
 
-We need to make sure that teh `android:layout_width` is set to wither `match_constraint` or `0dp` (they are, in fact, the same thing), and remove any margins. Then the view will always be sized to 25% of the parent:
+We need to make sure that the `android:layout_width` is set to either `match_constraint` or `0dp` (they are, in fact, the same thing), and remove any margins. Then the view will always be sized to 25% of the parent:
 
 ![Percent Width](../assets/images/layouts/percent_width.gif)
 
@@ -54,7 +54,7 @@ The XML for this is as follows:
 </android.support.constraint.ConstraintLayout>
 ```
 
-All of the actual work is done by the guideline, it's jsu a case of constraining the view to it, and we get the desired width.
+All of the actual work is done by the guideline, it's just a case of constraining the view to it, and we get the desired width.
 
 #### Percent margin in the editor
 
@@ -98,7 +98,7 @@ The difference is in how we constrain the view to it. In this case we specify `a
 
 #### Aspect ratio in the editor
 
-The final use-case of `PercentLayout` that we'll cover is how to make the height of a view a function of its width, or vice versa. There is a much fuller explanation of how this works in `ConstraintLayout` [here](../basics/dimensions.md). We specify a ratio of the view and ensire that both the `android:layout_width` and `android:layout_height` are set to `match_constraint` or `0dp`:
+The final use-case of `PercentLayout` that we'll cover is how to make the height of a view a function of its width, or vice versa. There is a much fuller explanation of how this works in `ConstraintLayout` [here](../basics/dimensions.md). We specify a ratio of the view and ensure that both the `android:layout_width` and `android:layout_height` are set to `match_constraint` or `0dp`:
 
 ![Dimension Ratio](../assets/images/basics/dimension_create.png)
 
