@@ -5,10 +5,6 @@ index: false
 
 # Contributors
 
-If you contribute to ConstraintLayout.com, just create a pull request and submit it to us. 
-You can also file an [issue](https://github.com/ConstraintLayout/constraintlayout.github.io/issues). 
-
-
 ## Admins
 
 {% assign contributor_pages = site.pages | where: "layout", "contributor" %}
