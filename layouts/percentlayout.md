@@ -9,9 +9,9 @@ cl_version: 1.0.2
 
 `PercentLayout`is generally used in responsive designs to size child views to a percentage of the parent layout's size.
 
-#### Percent width / height in the editor
+#### Percent width/height in the editor
 
-The first use-case of `PercentLayout` that we'll cover is specifying the width or height of a child view as a percentage of the parent. This is done using the `app:layout_widthPercent` and `app:layout_heightPercent` attributes (note the use of the `app` namespace here because `PercentLayout` is provided in a support library). To achive this we create a [guideline](../basics/guidelines.html) which corresponds to the percentage of the parent. For example, to achieve `app:layout_widthPercent="25%` we first create a guideline at 25% of the width of the parent:
+The first use-case of `PercentLayout` that we'll cover is specifying the width or height of a child view as a percentage of the parent. This is done using the `app:layout_widthPercent` and `app:layout_heightPercent` attributes (note the use of the `app` namespace here because `PercentLayout` is provided in a support library). To achive this we create a [guideline](../basics/guidelines.html) which corresponds to the percentage of the parent. For example, to achieve `app:layout_widthPercent="25%"` we first create a guideline at 25% of the width of the parent:
 
 ![Percent Width Guideline](../assets/images/layouts/percent_guideline.png)
 
@@ -21,7 +21,7 @@ We need to make sure that the `android:layout_width` is set to either `match_con
 
 ![Percent Width](../assets/images/layouts/percent_width.gif)
 
-#### Percent width / height in XML
+#### Percent width/height in XML
 
 The XML for this is as follows:
 
@@ -58,7 +58,7 @@ All of the actual work is done by the guideline, it's just a case of constrainin
 
 #### Percent margin in the editor
 
-`PercentLayout` also allows us to create a margin as a percentage of the parent. Once again we need to create a guideline to represent the margin that we're after, but instead of using it to set the width of a view, we create the constraint slightly differently to create the equivalent of a percentage margin. For example to achieve `app:layout_marginStartPercent="25%`, we would create a guideline at 25% of the parent width and then align the `start` edge of a view to it:
+`PercentLayout` also allows us to create a margin as a percentage of the parent. Once again we need to create a guideline to represent the margin that we're after, but instead of using it to set the width of a view, we create the constraint slightly differently to create the equivalent of a percentage margin. For example to achieve `app:layout_marginStartPercent="25%"`, we would create a guideline at 25% of the parent width and then align the `start` edge of a view to it:
 
 ![Percent Margin](../assets/images/layouts/percent_margin.gif)
 
@@ -102,7 +102,7 @@ The final use-case of `PercentLayout` that we'll cover is how to make the height
 
 ![Dimension Ratio](../assets/images/basics/dimension_create.png)
 
-Then if we constrain both horizontal edges, but leave at least one of the vertical edges unconstrained, then we make the height dependent on the width, and changing the width will also change the hight while maintaining the aspect ratio:
+Then if we constrain both horizontal edges, but leave at least one of the vertical edges unconstrained, then we make the height dependent on the width, and changing the width will also change the height while maintaining the aspect ratio:
 
 ![Dimension Ratio](../assets/images/basics/dimension_adjust.gif)
  
@@ -140,3 +140,4 @@ In XML, we must follow the same rules for the constraints as with the editor, an
   ```
   
   Once again a fuller explanation of this can be found in the article on [dimensions](../basics/dimensions.html).
+  
