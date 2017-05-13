@@ -7,9 +7,9 @@ cl_version: 1.0.2
 ---
 ### Centring
 
-A common thing that we need to do in layouts is centre an item either within the parent, relative to a sibline view, or even relative to an edge of a sibling view. In this article we'll look at techniques to achieve all of these. 
+A common thing that we need to do in layouts is centre an item either within the parent, relative to a sibling view, or even relative to an edge of a sibling view. In this article we'll look at techniques to achieve all of these. 
 
-Centring is usually done on a view which has an intrinsic `android:layout_[width|height]="wrap_content"`. All of the examples will follow that pattern. 
+Centring is usually done on a view which has an intrinsic size defined by `android:layout_[width|height]="wrap_content"`. All of the examples will follow that pattern. 
 
 #### Centring in the parent in the editor
 
@@ -57,13 +57,13 @@ In XML this is, once again, pretty similar. The only difference is that we speci
 
 #### Centring to the edge of a sibling in the editor
 
-The final centring trick is one that is very difficult to achieve in other layouts without getting really hacky, and that is centring a view to one edge of a sibling. The material design guidelines give [multiple examples of how a FAB should be centred on the edge of a panel](https://material.io/guidelines/components/buttons-floating-action-button.html#buttons-floating-action-button-large-screens), and with `ConstraintLayout` we have an easy way to achieve this. To vertically centre a view to an edge of a sibline We create constraints from _both_ `top` and `bottom` edges of the view we wisth to centre to the _same_ edge of the sibling view:   
+The final centring trick is one that is very difficult to achieve in other layouts without getting really hacky, and that is centring a view to one edge of a sibling. The material design guidelines give [multiple examples of how a FAB should be centred on the edge of a panel](https://material.io/guidelines/components/buttons-floating-action-button.html#buttons-floating-action-button-large-screens), and with `ConstraintLayout` we have an easy way to achieve this. To vertically centre a view to an edge of a sibling we create constraints from _both_ `top` and `bottom` edges of the view we wish to centre to the _same_ edge of the sibling view:   
 
 ![Centring in the parent](../assets/images/tricks/centring_sibling_edge.gif)
 
 #### Centring to the edge of a sibling in XML
 
-Once again, this it pretty straightforward in XML, we create constraints `app:layout_constraintTop_toBottomOf="@+id/imageView"` and `app:layout_constraintBottom_toBottomOf="@+id/imageView"`:
+Once again, this is pretty straightforward in XML, we create constraints `app:layout_constraintTop_toBottomOf="@+id/imageView"` and `app:layout_constraintBottom_toBottomOf="@+id/imageView"`:
 
 ```xml
   <TextView
