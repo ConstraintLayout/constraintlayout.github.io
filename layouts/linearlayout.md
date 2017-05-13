@@ -13,7 +13,7 @@ The basic behaviour of `LinearLayout` is to flow its children in either a horizo
 
 ![Flowed Vertical `LinearLayout`](../assets/images/layouts/linear_layout_flowed.gif)
 
-#### Flowed Behaviour in Editor
+#### Flowed Behaviour in XML
  
 To achieve this in XML we just create a `app:layout_constraintTop_toBottomOf` constraint from a view to the one preceeding it in the flowed layout:
 
@@ -71,12 +71,11 @@ To achieve this in XML we just create a `app:layout_constraintTop_toBottomOf` co
 
 #### Weighted Behaviour in Editor
 
-
 To create the equivalent of a weighted `LinearLayout` we must first create a chain as detailed [here](../basics/create_chains.md):
 
 ![Create Chain](../assets/images/basics/chains_create.gif)
 
-Now that a chain is set up, all we need to do is apply weights to individual views within the chain. This can be done by setting the view's `layout_width` to either `match_conststraint` or `0dp` (they are the same thing), and then applying a weight. In this case we use a horizontal weight because it is a horizontal chain:
+Now that a chain is set up, all we need to do is apply weights to individual views within the chain. This can be done by setting the view's `layout_width` to either `match_constraint` or `0dp` (they are the same thing), and then applying a weight. In this case we use a horizontal weight because it is a horizontal chain:
 
 ![Chain Weight](../assets/images/basics/chains_weight_properties.png)
 
@@ -86,7 +85,7 @@ And we can now see this behaviour in the blueprint view:
  
 #### Weighted Behaviour in XML
 
-To do this in XML we give set `android:layout_width="0dp"` and `app:layout_constraintHorizontal_weight="1"` on `textView3`:
+To do this in XML we set `android:layout_width="0dp"` and `app:layout_constraintHorizontal_weight="1"` on `textView3`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
