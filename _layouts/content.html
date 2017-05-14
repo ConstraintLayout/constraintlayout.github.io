@@ -15,7 +15,11 @@
                 {% for contributor in contributors %}
                 {% assign contributor_id = contributor.name | remove: ".md" %}
                 {% if contributor_id == page.author %}
-                <h3 class="author"><a href="{{ contributor_id | append: '.html' | prepend: 'contributors/' | relative_url }}">{{ contributor.forename }} {{ contributor.surname }}</a></h3>
+                <h4 class="author">
+                    <a href="{{ contributor_id | append: '.html' | prepend: 'contributors/' | relative_url }}">
+                        {{ contributor.forename }} {{ contributor.surname }}
+                    </a>
+                </h4>
                 {% endif %}
                 {% endfor %}
                 {% endunless %}
