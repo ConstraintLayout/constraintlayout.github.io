@@ -1,0 +1,26 @@
+{
+  "name": "ConstraintLayout.com",
+  "short_name": "ConstraintLayout",
+  "lang": "en-GB",
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#00386F",
+  "icons": [
+    {
+      "src": "assets/images/Icon1_48_blue.png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "assets/images/Icon1_64_blue.png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "assets/images/Icon1_128_blue.png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "assets/images/Icon1_256_blue.png",
+      "sizes": "256x256"
+    }
+  ]
+}
