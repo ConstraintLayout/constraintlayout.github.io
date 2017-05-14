@@ -19,7 +19,7 @@ These two principles are true of all Android layouts, not just `ConstraintLayout
 
 #### Creating a background in the editor
 
-To create a visual background for a group of views, we must first create a simple `View` object to which we apply the background colour or drawable in the `android:background` attribute (adding this before the other views will cause it to appear first in the layout DOM). 
+To create a visual background for a group of views, we must first create a simple `View` object to which we apply the background colour or drawable in the `android:background` attribute (adding this before the other views will cause it to appear first in the layout DOM). It is worth giving this some fixed dimensions initailly other wise it will be difficult to manipulate later - we'll change these as we go. Next add the views that we wish to visually group together, and add the necessary constraints to position them correctly but do not constrain anything to the background view that we just created. Once they are in position, we can now constrain the background view to the positions of the 
   
 ### The XML
 
