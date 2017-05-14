@@ -414,9 +414,19 @@ footer a:hover {
 
 img.profilePic {
   width: 60pt;
-  /* height: 40pt; */
   border-radius: 50%;
   margin: auto;
+}
+
+img.requisites { 
+  width: 18pt;
+  float: left;
+}
+
+span.requisites {
+  color: #969696;
+  vertical-align: baseline;
+  margin-left: 8pt;
 }
 
 /* MISC */
