@@ -423,6 +423,10 @@ img.profilePic {
   margin: auto;
 }
 
+p.requisites {
+  margin-right: 8pt;
+}
+
 img.requisites { 
   width: 18pt;
   float: left;
@@ -432,6 +436,44 @@ span.requisites {
   color: #969696;
   vertical-align: baseline;
   margin-left: 8pt;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: #666;
+    color: #ddd;
+    text-align: left;
+    padding: 8pt;
+    border-radius: 4pt;
+    font-size: 10pt;
+    font-weight: 200;
+
+    top: 115%;
+    left: 18pt; 
+    width: 200pt;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 10%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #666 transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 
 /* MISC */

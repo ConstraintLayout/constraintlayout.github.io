@@ -29,17 +29,21 @@
                     <div class="divTableRow">
                       {% if page.as_version != null %}
                       <div class="divTableCell">
-                          <p class="requisites">
+                          <p class="requisites tooltip">
                               <img src="/assets/images/ic_android_studio.png" class="requisites">
                               <span class="requisites">v{{ page.as_version }}</span>
+                              <span class="tooltiptext">All of the examples in this article have been created using <strong>Android Studio v{{ page.as_version }}</strong>.<br/>
+                              You may see differences if you are using a different version.</span>
                           </p>
                       </div>
                       {% endif %}
                       {% if page.as_version != null %}
                       <div class="divTableCell">
-                          <p class="requisites">
+                          <p class="requisites tooltip">
                               <img src="/assets/images/ic_constraint_layout.png" class="requisites">
                               <span class="requisites">v{{ page.cl_version }}</span>
+                              <span class="tooltiptext">All of the examples in this article have been created using <strong>ConstraintLayout v{{ page.cl_version }}</strong>.<br/>
+                              You may see differences if you are using a different version.</span>
                           </p>
                       </div>
                       {% endif %}
