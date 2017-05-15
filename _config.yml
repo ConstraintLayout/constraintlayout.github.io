@@ -10,3 +10,4 @@ defaults:
       path: "contributors"
     values:
       index: false
+emptyArray: []

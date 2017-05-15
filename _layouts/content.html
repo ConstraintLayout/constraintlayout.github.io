@@ -11,13 +11,29 @@
         <section id="main-content">
             <h1>{{ page.title }}</h1>
             {% unless page.author == null %}
+            {% assign authornames = site.emptyArray %}
+            {% assign authorlinks = site.emptyArray %}
             {% assign contributors = site.pages | where: "layout", "contributor" %}
             {% for contributor in contributors %}
             {% assign contributor_id = contributor.name | remove: ".md" %}
-            {% if contributor_id == page.author %}
-            <h3 class="author"><a href="{{ contributor_id | append: '.html' | prepend: 'contributors/' | relative_url }}">{{ contributor.forename }} {{ contributor.surname }}</a></h3>
+            {% assign authors = page.author | split:',' %}
+            {% for name in authors %}
+            {% if contributor_id == name %}
+            {% assign authorname = contributor.forename | append: ' ' | append: contributor.surname %}
+            {% assign authorlink = contributor_id | append: '.html' | prepend: 'contributors/' | relative_url %}
+            {% assign authornames = authornames | push: authorname %}
+            {% assign authorlinks = authorlinks | push: authorlink %}
             {% endif %}
             {% endfor %}
+            {% endfor %}
+            {% if authornames.size > 0 %}
+            <h3 class="author">
+            {% assign endindex = authornames.size | minus: 1 %}
+            {% for i in (0..endindex) %}
+            <a href="{{ authorlinks[i] }}">{{ authornames[i] }}</a>{% if authornames[i] != authornames.last %}, {% endif %}
+            {% endfor %}
+            </h3>
+            {% endif %}
             {% endunless %}
             {% if page.cl_version != null and page.as_version == null %}
             Note: All of the examples in this article have been created using <code class="highlighter-rouge">ConstraintLayout</code> V{{ page.cl_version }}. You may see differences if you are using a different version.
