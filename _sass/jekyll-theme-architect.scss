@@ -8,9 +8,9 @@ $body-font: Lato, 'Helvetica Neue', Helvetica, Arial, serif;
 /* LAYOUT STYLES */
 body {
   font-family: $body-font;
-  font-size: 15px;
+  font-size: 12pt;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #666;
   background: #fafafa url(../images/body-bg.jpg) 0 0 repeat;
 }
@@ -270,13 +270,6 @@ form {
   color: #9ddcff;
 }
 
-#main-content h3.author:before {
-  content: "Author: ";
-  padding-right: 0.3em;
-  margin-left: -0.65em;
-  color: #474747;
-}
-
 #main-content h4 {
   margin-bottom: 8px;
   font-family: $header-font;
@@ -291,6 +284,18 @@ h4:before {
   margin-left: -2.8em;
   content: "////";
   color: #9ddcff;
+}
+
+#main-content h4.author {
+  text-indent: 10px;
+  margin-top: 0pt;
+}
+
+#main-content h4.author:before {
+  content: "Author: ";
+  padding-right: 0.3em;
+  padding-left: 2.2em;
+  color: #474747;
 }
 
 #main-content h5 {
@@ -414,9 +419,61 @@ footer a:hover {
 
 img.profilePic {
   width: 60pt;
-  /* height: 40pt; */
   border-radius: 50%;
   margin: auto;
+}
+
+p.requisites {
+  margin-right: 8pt;
+}
+
+img.requisites { 
+  width: 18pt;
+  float: left;
+}
+
+span.requisites {
+  color: #969696;
+  vertical-align: baseline;
+  margin-left: 8pt;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: #666;
+    color: #ddd;
+    text-align: left;
+    padding: 8pt;
+    border-radius: 4pt;
+    font-size: 10pt;
+    font-weight: 200;
+
+    top: 115%;
+    left: 18pt; 
+    width: 200pt;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 10%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #666 transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 
 /* MISC */
@@ -489,6 +546,14 @@ img.profilePic {
     padding-right: 0;
     margin-left: 0;
     content: none;
+  }
+
+  #main-content h4.author {
+    margin-top: 0;
+  }
+
+  #main-content h4.author:before {
+    padding-left: 0;
   }
 }
 
@@ -566,6 +631,10 @@ img.profilePic {
     padding-right: 0;
     margin-left: 0;
     content: none;
+  }
+
+  #main-content h4.author:before {
+    padding-left: 0;
   }
 }
 

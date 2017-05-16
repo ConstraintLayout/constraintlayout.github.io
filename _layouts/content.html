@@ -6,35 +6,59 @@
 
 <body>
 {% include header.html %}
-<div id="content-wrapper">
-    <div class="inner clearfix">
-        <section id="main-content">
-            <h1>{{ page.title }}</h1>
-            {% unless page.author == null %}
-            {% assign contributors = site.pages | where: "layout", "contributor" %}
-            {% for contributor in contributors %}
-            {% assign contributor_id = contributor.name | remove: ".md" %}
-            {% if contributor_id == page.author %}
-            <h3 class="author"><a href="{{ contributor_id | append: '.html' | prepend: 'contributors/' | relative_url }}">{{ contributor.forename }} {{ contributor.surname }}</a></h3>
-            {% endif %}
-            {% endfor %}
-            {% endunless %}
-            {% if page.cl_version != null and page.as_version == null %}
-            Note: All of the examples in this article have been created using <code class="highlighter-rouge">ConstraintLayout</code> V{{ page.cl_version }}. You may see differences if you are using a different version.
-            {% endif %}
-            {% if page.cl_version == null and page.as_version != null %}
-            Note: All of the examples in this article have been created using Android Studio V{{ page.as_version }}. You may see differences if you are using a different version.
-            {% endif %}
-            {% if page.as_version != null and page.cl_version != null %}
-            Note: All of the examples in this article have been created using Android Studio V{{ page.as_version }} and <code class="highlighter-rouge">ConstraintLayout</code> V{{ page.cl_version }}. You may see differences if you are using different versions.
-            {% endif %}
-            {{ content }}
-        </section>
 
-        {% include sidebar.html %}
-    </div>
-</div>
+    <div id="content-wrapper">
+        <div class="inner clearfix">
+            <section id="main-content">
+                <h1>{{ page.title }}</h1>
+                {% unless page.author == null %}
+                {% assign contributors = site.pages | where: "layout", "contributor" %}
+                {% for contributor in contributors %}
+                {% assign contributor_id = contributor.name | remove: ".md" %}
+                {% if contributor_id == page.author %}
+                <h4 class="author">
+                    <a href="{{ contributor_id | append: '.html' | prepend: 'contributors/' | relative_url }}">
+                        {{ contributor.forename }} {{ contributor.surname }}
+                    </a>
+                </h4>
+                {% endif %}
+                {% endfor %}
+                {% endunless %}
+                {% if page.as_version != null or page.cl_version != null %}
+                <div class="divTable" style="width: auto;">
+                  <div class="divTableBody">
+                    <div class="divTableRow">
+                      {% if page.as_version != null %}
+                      <div class="divTableCell">
+                          <p class="requisites tooltip">
+                              <img src="{{ '/assets/images/ic_android_studio.png' | absolute_url }}" class="requisites">
+                              <span class="requisites">v{{ page.as_version }}</span>
+                              <span class="tooltiptext">All of the examples in this article have been created using <strong>Android Studio v{{ page.as_version }}</strong>.<br/>
+                                  You may see differences if you are using a different version.</span>
+                              </p>
+                          </div>
+                          {% endif %}
+                          {% if page.as_version != null %}
+                          <div class="divTableCell">
+                              <p class="requisites tooltip">
+                                  <img src="{{ '/assets/images/ic_constraint_layout.png' | absolute_url }}" class="requisites">
+                                  <span class="requisites">v{{ page.cl_version }}</span>
+                                  <span class="tooltiptext">All of the examples in this article have been created using <strong>ConstraintLayout v{{ page.cl_version }}</strong>.<br/>
+                                      You may see differences if you are using a different version.</span>
+                                  </p>
+                              </div>
+                              {% endif %}
+                          </div>
+                      </div>
+                  </div>
+                  {% endif %}
+                  {{ content }}
+              </section>
 
-{% include analytics.html %}
-</body>
-</html>
+              {% include sidebar.html %}
+          </div>
+      </div>
+
+      {% include analytics.html %}
+  </body>
+  </html>
