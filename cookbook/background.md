@@ -7,7 +7,7 @@ cl_version: 1.0.2
 ---
 ### Backgrounds
 
-A common pattern in Android layouts is where we need to visually group a collection of views together, and the visual indicator of that grouping is a common background which wraps those views. Normally we would achieve this by using a `ViewGroup` to which the background is applied, set its `android:layout_[width|height]="wrap_contents"`, and add the views we wish to group as children. The downside of this is that nested layouts can be expensive during the layout pass, and they also make using `TransitionManager` a little harder, so current best practice is to keep layouts as flat as possible. `ConstraintLayout` allows us to do this with no nesting - keeping the the background and all of the children we wish to visually group as immediate children of the `ConstraintLayout`.
+A common pattern in Android layouts is where we need to visually group a collection of views together, and the visual indicator of that grouping is a common background which wraps those views. Normally we would achieve this by using a `ViewGroup` to which the background is applied, set its `android:layout_[width|height]="wrap_contents"`, and add the views we wish to group as children. The downside of this is that nested layouts can be expensive during the layout pass, and they also make using `TransitionManager` a little harder, so current best practice is to keep layouts as flat as possible. `ConstraintLayout` allows us to do this with no nesting - keeping the background and all of the children we wish to visually group as immediate children of the `ConstraintLayout`.
   
 #### Some fundamentals
 
