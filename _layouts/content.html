@@ -11,38 +11,49 @@
         <section id="main-content">
             <h1>{{ page.title }}</h1>
             {% unless page.author == null %}
-            {% assign authornames = site.emptyArray %}
-            {% assign authorlinks = site.emptyArray %}
+            {% for author in page.author %}
             {% assign contributors = site.pages | where: "layout", "contributor" %}
             {% for contributor in contributors %}
             {% assign contributor_id = contributor.name | remove: ".md" %}
-            {% assign authors = page.author | split:',' %}
-            {% for name in authors %}
-            {% if contributor_id == name %}
-            {% assign authorname = contributor.forename | append: ' ' | append: contributor.surname %}
-            {% assign authorlink = contributor_id | append: '.html' | prepend: 'contributors/' | relative_url %}
-            {% assign authornames = authornames | push: authorname %}
-            {% assign authorlinks = authorlinks | push: authorlink %}
+            {% if contributor_id == author %}
+            <h4 class="author">
+                <a href="{{ contributor_id | append: '.html' | prepend: 'contributors/' | relative_url }}">
+                    {{ contributor.forename }} {{ contributor.surname }}
+                </a>
+            </h4>
             {% endif %}
             {% endfor %}
             {% endfor %}
-            {% if authornames.size > 0 %}
-            <h3 class="author">
-            {% assign endindex = authornames.size | minus: 1 %}
-            {% for i in (0..endindex) %}
-            <a href="{{ authorlinks[i] }}">{{ authornames[i] }}</a>{% if authornames[i] != authornames.last %}, {% endif %}
-            {% endfor %}
-            </h3>
-            {% endif %}
             {% endunless %}
-            {% if page.cl_version != null and page.as_version == null %}
-            Note: All of the examples in this article have been created using <code class="highlighter-rouge">ConstraintLayout</code> V{{ page.cl_version }}. You may see differences if you are using a different version.
-            {% endif %}
-            {% if page.cl_version == null and page.as_version != null %}
-            Note: All of the examples in this article have been created using Android Studio V{{ page.as_version }}. You may see differences if you are using a different version.
-            {% endif %}
-            {% if page.as_version != null and page.cl_version != null %}
-            Note: All of the examples in this article have been created using Android Studio V{{ page.as_version }} and <code class="highlighter-rouge">ConstraintLayout</code> V{{ page.cl_version }}. You may see differences if you are using different versions.
+            {% if page.as_version != null or page.cl_version != null %}
+            <div class="divTable" style="width: auto;">
+                <div class="divTableBody">
+                    <div class="divTableRow">
+                        {% if page.as_version != null %}
+                        <div class="divTableCell">
+                            <p class="requisites tooltip">
+                                <img src="{{ '/assets/images/ic_android_studio.png' | absolute_url }}"
+                                     class="requisites">
+                                <span class="requisites">v{{ page.as_version }}</span>
+                                <span class="tooltiptext">All of the examples in this article have been created using <strong>Android Studio v{{ page.as_version }}</strong>.<br/>
+                                  You may see differences if you are using a different version.</span>
+                            </p>
+                        </div>
+                        {% endif %}
+                        {% if page.as_version != null %}
+                        <div class="divTableCell">
+                            <p class="requisites tooltip">
+                                <img src="{{ '/assets/images/ic_constraint_layout.png' | absolute_url }}"
+                                     class="requisites">
+                                <span class="requisites">v{{ page.cl_version }}</span>
+                                <span class="tooltiptext">All of the examples in this article have been created using <strong>ConstraintLayout v{{ page.cl_version }}</strong>.<br/>
+                                      You may see differences if you are using a different version.</span>
+                            </p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
             {% endif %}
             {{ content }}
         </section>
