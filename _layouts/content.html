@@ -11,19 +11,27 @@
         <section id="main-content">
             <h1>{{ page.title }}</h1>
             {% unless page.author == null %}
+            {% if page.author.first %}
+            {% assign cssclass = 'author multiple' %}
+            {% else %}
+            {% assign cssclass = 'author single' %}
+            {% endif %}
+            {% assign pipe_if_needed = '' %}
+            <h4 class="{{cssclass}}">
             {% for author in page.author %}
             {% assign contributors = site.pages | where: "layout", "contributor" %}
             {% for contributor in contributors %}
             {% assign contributor_id = contributor.name | remove: ".md" %}
             {% if contributor_id == author %}
-            <h4 class="author">
+                {{pipe_if_needed}}
                 <a href="{{ contributor_id | append: '.html' | prepend: 'contributors/' | relative_url }}">
                     {{ contributor.forename }} {{ contributor.surname }}
                 </a>
-            </h4>
+                {% assign pipe_if_needed = ' | ' %}
             {% endif %}
             {% endfor %}
             {% endfor %}
+            </h4>
             {% endunless %}
             {% if page.as_version != null or page.cl_version != null %}
             <div class="divTable" style="width: auto;">

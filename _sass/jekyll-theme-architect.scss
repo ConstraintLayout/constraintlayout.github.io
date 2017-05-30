@@ -292,10 +292,17 @@ h4:before {
 }
 
 #main-content h4.author:before {
-  content: "Author: ";
   padding-right: 0.3em;
   padding-left: 2.2em;
   color: #474747;
+}
+
+#main-content h4.single:before {
+  content: "Author: ";
+}
+
+#main-content h4.multiple:before {
+  content: "Authors: ";
 }
 
 #main-content h5 {
