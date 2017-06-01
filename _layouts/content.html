@@ -6,59 +6,70 @@
 
 <body>
 {% include header.html %}
-
-    <div id="content-wrapper">
-        <div class="inner clearfix">
-            <section id="main-content">
-                <h1>{{ page.title }}</h1>
-                {% unless page.author == null %}
-                {% assign contributors = site.pages | where: "layout", "contributor" %}
-                {% for contributor in contributors %}
-                {% assign contributor_id = contributor.name | remove: ".md" %}
-                {% if contributor_id == page.author %}
-                <h4 class="author">
-                    <a href="{{ contributor_id | append: '.html' | prepend: 'contributors/' | relative_url }}">
-                        {{ contributor.forename }} {{ contributor.surname }}
-                    </a>
-                </h4>
-                {% endif %}
-                {% endfor %}
-                {% endunless %}
-                {% if page.as_version != null or page.cl_version != null %}
-                <div class="divTable" style="width: auto;">
-                  <div class="divTableBody">
+<div id="content-wrapper">
+    <div class="inner clearfix">
+        <section id="main-content">
+            <h1>{{ page.title }}</h1>
+            {% unless page.author == null %}
+            {% if page.author.first %}
+            {% assign cssclass = 'author multiple' %}
+            {% else %}
+            {% assign cssclass = 'author single' %}
+            {% endif %}
+            {% assign pipe_if_needed = '' %}
+            <h4 class="{{cssclass}}">
+            {% for author in page.author %}
+            {% assign contributors = site.pages | where: "layout", "contributor" %}
+            {% for contributor in contributors %}
+            {% assign contributor_id = contributor.name | remove: ".md" %}
+            {% if contributor_id == author %}
+                {{pipe_if_needed}}
+                <a href="{{ contributor_id | append: '.html' | prepend: 'contributors/' | relative_url }}">
+                    {{ contributor.forename }} {{ contributor.surname }}
+                </a>
+                {% assign pipe_if_needed = ' | ' %}
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+            </h4>
+            {% endunless %}
+            {% if page.as_version != null or page.cl_version != null %}
+            <div class="divTable" style="width: auto;">
+                <div class="divTableBody">
                     <div class="divTableRow">
-                      {% if page.as_version != null %}
-                      <div class="divTableCell">
-                          <p class="requisites tooltip">
-                              <img src="{{ '/assets/images/ic_android_studio.png' | absolute_url }}" class="requisites">
-                              <span class="requisites">v{{ page.as_version }}</span>
-                              <span class="tooltiptext">All of the examples in this article have been created using <strong>Android Studio v{{ page.as_version }}</strong>.<br/>
+                        {% if page.as_version != null %}
+                        <div class="divTableCell">
+                            <p class="requisites tooltip">
+                                <img src="{{ '/assets/images/ic_android_studio.png' | absolute_url }}"
+                                     class="requisites">
+                                <span class="requisites">v{{ page.as_version }}</span>
+                                <span class="tooltiptext">All of the examples in this article have been created using <strong>Android Studio v{{ page.as_version }}</strong>.<br/>
                                   You may see differences if you are using a different version.</span>
-                              </p>
-                          </div>
-                          {% endif %}
-                          {% if page.as_version != null %}
-                          <div class="divTableCell">
-                              <p class="requisites tooltip">
-                                  <img src="{{ '/assets/images/ic_constraint_layout.png' | absolute_url }}" class="requisites">
-                                  <span class="requisites">v{{ page.cl_version }}</span>
-                                  <span class="tooltiptext">All of the examples in this article have been created using <strong>ConstraintLayout v{{ page.cl_version }}</strong>.<br/>
+                            </p>
+                        </div>
+                        {% endif %}
+                        {% if page.as_version != null %}
+                        <div class="divTableCell">
+                            <p class="requisites tooltip">
+                                <img src="{{ '/assets/images/ic_constraint_layout.png' | absolute_url }}"
+                                     class="requisites">
+                                <span class="requisites">v{{ page.cl_version }}</span>
+                                <span class="tooltiptext">All of the examples in this article have been created using <strong>ConstraintLayout v{{ page.cl_version }}</strong>.<br/>
                                       You may see differences if you are using a different version.</span>
-                                  </p>
-                              </div>
-                              {% endif %}
-                          </div>
-                      </div>
-                  </div>
-                  {% endif %}
-                  {{ content }}
-              </section>
+                            </p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {{ content }}
+        </section>
 
-              {% include sidebar.html %}
-          </div>
-      </div>
+        {% include sidebar.html %}
+    </div>
+</div>
 
-      {% include analytics.html %}
-  </body>
-  </html>
+{% include analytics.html %}
+</body>
+</html>
