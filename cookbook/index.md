@@ -3,5 +3,4 @@ layout: index
 title: Cookbook
 ---
 
-The {{ page.title }} section provides details of how features of other Android Layout types can easily be reproduced using 
-ConstraintLayout. The layout types currently documented are:
+The {{ page.title }} section provides details of how we can achieve some useful behaviours using ConstraintLayout. The current recipes are:
