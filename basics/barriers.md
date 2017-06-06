@@ -12,7 +12,7 @@ When we are creating Android layouts, sometimes we encounter situations where th
 
 ![Aligned Layout (English)](../assets/images/basics/barriers_alignment_en.png)
 
-Here we have three TextViews: `textView1` and `textView2` on the left; and `textView3` on the right. `textView3` has been constrained to the end of `textView1` and this works perfectly - it positions and sizes`textView3` exactly as we need it.
+Here we have three TextViews: `textView1` and `textView2` on the left; and `textView3` on the right. `textView3` has been constrained to the end of `textView1` and this works perfectly - it positions and sizes `textView3` exactly as we need it.
  
  However, things become more complicated if we need to support multiple languages. If we add a German translation then we have a problem because in the English version the text in `textView1` is longer than that in `textView2`, whereas in German the text in `textView2` is longer than that in `textView1`:
  
@@ -20,7 +20,7 @@ Here we have three TextViews: `textView1` and `textView2` on the left; and `text
 
 The problem here is that `textView3` is still constrained to `textView1` and so `textView2` is now running in to `textView3`. This is seen most clearly in the Design view (the one with the white background).
  
- The obvious solutions to this would be to either use `TableLayout`, or wrap `textView1` & `textView2` inside a vertical `LinearLayout` with `android:layout_width="wrap_content"` nd then constrain `textView3` to the end of this `LinearLayout`. But there is a better way: Barriers.
+ The obvious solutions to this would be to either use `TableLayout`, or to wrap `textView1` & `textView2` inside a vertical `LinearLayout` with `android:layout_width="wrap_content"` and then constrain `textView3` to the end of this `LinearLayout`. But there is a better way: Barriers.
  
 A `Barrier` is a virtual view, similar to a `Guideline`, to which we can constrain objects. The difference between a `Barrier` and a `Guideline` is that the position of a `Barrier` is determined by the dimensions of multiple views. In the case of our example, we don't know whether `textView1` or `textView2` will be wider, so we can create a `Barrier` based upon the widths of these two Views. Then we can constrain `textView3` to the `Barrier`.
  
@@ -35,7 +35,7 @@ We can optionally change its position within the layout hierarchy by dragging it
 
  ![Move Barrier](../assets/images/basics/barrier_order.gif)
  
- Next we need to set the direction fo the `Barrier`. In our case we want to position the `Barrier` relative to the `End` of either `textView1` or `textView2` depending on whichever is the larger, so we need to specify a direction of `end`:
+ Next we need to set the direction for the `Barrier`. In our case we want to position the `Barrier` relative to the `End` of either `textView1` or `textView2` depending on whichever is the larger, so we need to specify a direction of `end`:
  
 ![Barrier Direction](../assets/images/basics/barrier_direction.gif)
 
