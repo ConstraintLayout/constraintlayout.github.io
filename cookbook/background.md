@@ -13,7 +13,7 @@ A common pattern in Android layouts is where we need to visually group a collect
 
 There are a couple of important principles that we need to be aware of. Firstly (apart from some cases when animating) Android will draw views in the order in which they appear within the layout DOM. So if we occupy the same space with two separate views, the one which appears last in the layout DOM will be drawn on top of the one which appears first.
 
-The second principle is concerning view IDs. A view ID is first declared in the layout by using the `+` prefix to the `id` resource type: `@+id/background`. This does not _have_ to an attribute of the the view which it identifies. In other words it is possible for a view to reference another view which appears later in the layout provided it uses the `+` prefix in the id reference. That ensures that the id will be created if it does not already exist.
+The second principle is concerning view IDs. A view ID is first declared in the layout by using the `+` prefix to the `id` resource type: `@+id/background`. This does not _have_ to be an attribute of the the view which it identifies. In other words it is possible for a view to reference another view which appears later in the layout provided it uses the `+` prefix in the id reference. That ensures that the id will be created if it does not already exist.
 
 These two principles are true of all Android layouts, not just `ConstraintLayout`, but they are key to understanding how this technique works.
 
