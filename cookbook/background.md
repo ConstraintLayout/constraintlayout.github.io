@@ -21,7 +21,7 @@ These two principles are true of all Android layouts, not just `ConstraintLayout
 
 To create a visual background for a group of views, we must first create a simple `View` object to which we apply the background colour or drawable in the `android:background` attribute (adding this before the other views will cause it to be drawn behind the others). It is worth giving this some fixed dimensions initially otherwise it will be difficult to manipulate later - we'll change these as we go. Next add the views that we wish to visually group together, and add the necessary constraints to position them correctly but do not constrain anything to the background view that we just created. Once they are in position, we can now constrain the background view to the positions of visual children (i.e. the Views which will appear to be child Views of the background View).
 
-It is actually quite difficult to see these constraints if we do them all at once, so let's look at them side by side and focus on how we constrain the verticals of the background view (on the left) to the visual children (on the right):
+It is actually quite difficult to see these constraints if we do them all at once, so let's look at them side by side and focus on how we constrain the verticals of the background view (on the right) to the visual children (on the left):
 
 ![Background vertical constraints]({{ '/assets/images/cookbook/background_alignment.gif' | absolute_url  }} )
 
