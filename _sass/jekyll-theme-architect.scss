@@ -219,6 +219,16 @@ form {
 
 /* GENERAL ELEMENT TYPE STYLES */
 
+@mixin withSlashesBefore($leftRecess, $content) {
+  $paddingRight: .3em;
+  padding-right: $paddingRight;
+  margin-left: -$leftRecess;
+  display: inline-block;
+  width: $leftRecess - $paddingRight;
+  color: #9ddcff;
+  content: $content;
+}
+
 #main-content h1 {
   margin-top: 0;
   margin-bottom: 0;
@@ -228,13 +238,10 @@ form {
   color: #474747;
   text-indent: 6px;
   letter-spacing: -1px;
-}
 
-#main-content h1:before {
-  padding-right: 0.3em;
-  margin-left: -0.9em;
-  color: #9ddcff;
-  content: "/";
+  &:before {
+    @include withSlashesBefore(.9em, "/");
+  }
 }
 
 #main-content h2 {
@@ -244,13 +251,10 @@ form {
   font-weight: bold;
   color: #474747;
   text-indent: 4px;
-}
 
-#main-content h2:before {
-  padding-right: 0.3em;
-  margin-left: -1.5em;
-  content: "//";
-  color: #9ddcff;
+  &:before {
+    @include withSlashesBefore(1.5em, "//");
+  }
 }
 
 #main-content h3 {
@@ -261,13 +265,10 @@ form {
   font-weight: bold;
   color: #474747;
   text-indent: 3px;
-}
 
-#main-content h3:before {
-  padding-right: 0.3em;
-  margin-left: -2em;
-  content: "///";
-  color: #9ddcff;
+  &:before {
+    @include withSlashesBefore(2em, "///");
+  }
 }
 
 #main-content h4 {
@@ -277,32 +278,29 @@ form {
   font-weight: bold;
   color: #474747;
   text-indent: 3px;
-}
 
-h4:before {
-  padding-right: 0.3em;
-  margin-left: -2.8em;
-  content: "////";
-  color: #9ddcff;
+  &:before {
+    @include withSlashesBefore(2.8em, "////");
+  }
 }
 
 #main-content h4.author {
   text-indent: 10px;
   margin-top: 0pt;
-}
+  &:before {
+    padding-right: 0.3em;
+    padding-left: 2.2em;
+    color: #474747;
+    width: auto;
+  }
 
-#main-content h4.author:before {
-  padding-right: 0.3em;
-  padding-left: 2.2em;
-  color: #474747;
-}
+  &.single:before {
+    content: "Author: ";
+  }
 
-#main-content h4.single:before {
-  content: "Author: ";
-}
-
-#main-content h4.multiple:before {
-  content: "Authors: ";
+  &.multiple:before {
+    content: "Authors: ";
+  }
 }
 
 #main-content h5 {
@@ -311,13 +309,10 @@ h4:before {
   font-size: 14px;
   color: #474747;
   text-indent: 3px;
-}
 
-h5:before {
-  padding-right: 0.3em;
-  margin-left: -3.2em;
-  content: "/////";
-  color: #9ddcff;
+  &:before {
+    @include withSlashesBefore(3.2em, "/////");
+  }
 }
 
 #main-content h6 {
@@ -326,13 +321,10 @@ h5:before {
   font-size: .8em;
   color: #474747;
   text-indent: 3px;
-}
 
-h6:before {
-  padding-right: 0.3em;
-  margin-left: -3.7em;
-  content: "//////";
-  color: #9ddcff;
+  &:before {
+    @include withSlashesBefore(3.7em, "//////");
+  }
 }
 
 p {
