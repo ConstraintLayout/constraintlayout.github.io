@@ -33,41 +33,39 @@ header {
   font-family: $header-font;
   background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
   border-bottom: solid 1px #275da1;
-}
 
-header h1 {
-  width: 540px;
-  margin-top: 0;
-  margin-bottom: 0.2em;
-  font-size: 56px;
-  font-weight: normal;
-  line-height: 1;
-  color: #fff;
-  letter-spacing: -1px;
-}
+  h1 {
+    width: 540px;
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    font-size: 56px;
+    font-weight: normal;
+    line-height: 1;
+    color: #fff;
+    letter-spacing: -1px;
 
-header h1:before {
-  content: "";
-  background: url(../images/Icon1_64_blue.png) no-repeat;
-  width: 64px;
-  height: 64px;
-  display: block;
-  float: left;
-  margin-top: -4px;
-  padding-right: 8px;
-  //margin-left: -100px;
-  //padding-right: 36px;
-}
+    &:before {
+      content: "";
+      background: url(../images/Icon1_64_blue.png) no-repeat;
+      width: 64px;
+      height: 64px;
+      display: block;
+      float: left;
+      margin-top: -4px;
+      padding-right: 8px;
+    }
+  }
 
-header h2 {
-  width: 540px;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 26px;
-  font-weight: normal;
-  line-height: 1.3;
-  color: #9ddcff;
-  letter-spacing: 0;
+  h2 {
+    width: 540px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 1.3;
+    color: #9ddcff;
+    letter-spacing: 0;
+  }
 }
 
 .inner {
@@ -84,13 +82,13 @@ header h2 {
 #main-content {
   float: left;
   width: 690px;
+
+  img {
+    max-width: 100%;
+  }
 }
 
-#main-content img {
-  max-width: 100%;
-}
-
-aside#sidebar {
+#sidebar {
   float: right;
   width: 200px;
   min-height: 504px;
@@ -98,16 +96,15 @@ aside#sidebar {
   font-size: 13px;
   line-height: 1.3;
   background: transparent url(../images/sidebar-bg.jpg) 0 0 no-repeat;
-}
 
-aside#sidebar h3 {
-  font-family: $header-font;
-  font-size: 15px;  
-}
+  h3 {
+    font-family: $header-font;
+    font-size: 15px;
+  }
 
-aside#sidebar p.repo-owner,
-aside#sidebar p.repo-owner a {
-  font-weight: bold;
+  p.repo-owner, p.repo-owner a {
+    font-weight: bold;
+  }
 }
 
 #downloads {
@@ -123,11 +120,11 @@ a.button {
   font-size: 23px;
   line-height: 1.2;
   color: #fff;
-}
 
-a.button small {
-  display: block;
-  font-size: 11px;
+  small {
+    display: block;
+    font-size: 11px;
+  }
 }
 
 header a.button {
@@ -209,7 +206,6 @@ td {
   text-align: left;
   border: 1px solid #ebebeb;
 }
-
 
 form {
   padding: 20px;
@@ -329,14 +325,14 @@ form {
 
 p {
   margin-bottom: 20px;
+
+  a {
+    font-weight: 400;
+  }
 }
 
 a {
   text-decoration: none;
-}
-
-p a {
-  font-weight: 400;
 }
 
 blockquote {
@@ -350,23 +346,23 @@ ul {
   list-style-position: inside;
   list-style: disc;
   padding-left: 20px;
-}
 
-ul.sub {
-  list-style-position: inside;
-  list-style: square;
-  padding-left: 20px;
-  text-decoration: none;
-}
+  &.sub {
+    list-style-position: inside;
+    list-style: square;
+    padding-left: 20px;
+    text-decoration: none;
 
-ul.sub li {
-  font-weight: normal;
-  text-decoration: none;
-}
+    li {
+      font-weight: normal;
+      text-decoration: none;
 
-ul.sub li.active {
-  font-weight: bold;
-  text-decoration: underline;
+      &.active {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 ol {
@@ -387,14 +383,14 @@ footer {
   font-size: 13px;
   color: #aaa;
   background: transparent url('../images/hr.png') 0 0 no-repeat;
-}
 
-footer a {
-  color: #666;
-}
+  a {
+    color: #666;
 
-footer a:hover {
-  color: #444;
+    &:hover {
+      color: #444;
+    }
+  }
 }
 
 .divTable {
@@ -426,7 +422,7 @@ p.requisites {
   margin-right: 8pt;
 }
 
-img.requisites { 
+img.requisites {
   width: 18pt;
   float: left;
 }
@@ -440,60 +436,56 @@ span.requisites {
 .tooltip {
     position: relative;
     display: inline-block;
-}
 
-/* Tooltip text */
-.tooltip .tooltiptext {
-    visibility: hidden;
-    background-color: #666;
-    color: #ddd;
-    text-align: left;
-    padding: 8pt;
-    border-radius: 4pt;
-    font-size: 10pt;
-    font-weight: 200;
+    &:hover .tooltiptext {
+      visibility: visible;
+    }
 
-    top: 115%;
-    left: 18pt; 
-    width: 200pt;
-    position: absolute;
-    z-index: 1;
-}
+    .tooltiptext {
+      visibility: hidden;
+      background-color: #666;
+      color: #ddd;
+      text-align: left;
+      padding: 8pt;
+      border-radius: 4pt;
+      font-size: 10pt;
+      font-weight: 200;
 
-.tooltip .tooltiptext::after {
-    content: " ";
-    position: absolute;
-    bottom: 100%;
-    left: 10%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent #666 transparent;
-}
+      top: 115%;
+      left: 18pt;
+      width: 200pt;
+      position: absolute;
+      z-index: 1;
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
+      &:after {
+        content: " ";
+        position: absolute;
+        bottom: 100%;
+        left: 10%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent #666 transparent;
+      }
+    }
 }
 
 /* MISC */
-.clearfix:after {
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-  content: '.';
-}
 
 .clearfix {
-  display: inline-block;
+  display: block;
+
+  &:after {
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    content: '.';
+  }
 }
 
 * html .clearfix {
   height: 1%;
-}
-
-.clearfix {
-  display: block;
 }
 
 /* #Media Queries
@@ -508,51 +500,56 @@ span.requisites {
   .inner {
     width: 740px;
   }
-  header h1, header h2 {
-    width: 340px;
+
+  header {
+    h1, h2 {
+      width: 340px;
+    }
+
+    h1 {
+      font-size: 34px;
+
+      &:before {
+        content: "";
+        background: url(../images/Icon1_48_blue.png) no-repeat;
+        width: 48px;
+        height: 48px;
+        display: block;
+        float: left;
+        margin-top: -7px;
+      }
+    }
+
+    h2 {
+      font-size: 30px;
+    }
+
+    a.button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: transparent url(../images/github-button.png) 0 0 no-repeat;
+      margin-top: -22px;
+    }
   }
-  header h1 {
-    font-size: 34px;
-  }
-  header h1:before {
-    content: "";
-    background: url(../images/Icon1_48_blue.png) no-repeat;
-    width: 48px;
-    height: 48px;
-    display: block;
-    float: left;
-    margin-top: -7px;
-  }
-  header h2 {
-    font-size: 30px;
-  }
-  header a.button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: transparent url(../images/github-button.png) 0 0 no-repeat;
-    margin-top: -22px;
-  }
+
   #main-content {
     width: 490px;
-  }
-  #main-content h1:before,
-  #main-content h2:before,
-  #main-content h3:before,
-  #main-content h4:before,
-  #main-content h5:before,
-  #main-content h6:before {
-    padding-right: 0;
-    margin-left: 0;
-    content: none;
-  }
 
-  #main-content h4.author {
-    margin-top: 0;
-  }
+    h1, h2, h3, h4, h5, h6 {
+      &:before {
+        padding-right: 0;
+        margin-left: 0;
+        content: none;
+      }
+    }
 
-  #main-content h4.author:before {
-    padding-left: 0;
+    h4.author {
+      margin-top: 0;
+      &:before {
+        padding-left: 0;
+      }
+    }
   }
 }
 
@@ -563,77 +560,85 @@ span.requisites {
   }
   header {
     padding: 20px 0;
+
+    .inner {
+      position: relative;
+    }
+
+    h1, h2 {
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 32px;
+
+      &:before  {
+        content: "";
+        background: url(../images/Icon1_48_blue.png) no-repeat;
+        width: 48px;
+        height: 48px;
+        display: block;
+        float: left;
+        margin-top: -7px;
+      }
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    a.button {
+      position: relative;
+      display: inline-block;
+      width: auto;
+      height: auto;
+      padding: 5px 10px;
+      margin-top: 15px;
+      font-size: 13px;
+      line-height: 1;
+      color: #2879d0;
+      text-align: center;
+      background-color: #9ddcff;
+      background-image: none;
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+
+      small {
+        display: inline;
+        font-size: 13px;
+      }
+    }
   }
-  header .inner {
-    position: relative;
-  }
-  header h1, header h2 {
-    width: 100%;
-  }
-  header h1 {
-    font-size: 32px;
-  }
-  header h1:before {
-    content: "";
-    background: url(../images/Icon1_48_blue.png) no-repeat;
-    width: 48px;
-    height: 48px;
-    display: block;
-    float: left;
-    margin-top: -7px;
-  }
-  header h2 {
-    font-size: 24px;
-  }
-  header a.button {
-    position: relative;
-    display: inline-block;
-    width: auto;
-    height: auto;
-    padding: 5px 10px;
-    margin-top: 15px;
-    font-size: 13px;
-    line-height: 1;
-    color: #2879d0;
-    text-align: center;
-    background-color: #9ddcff;
-    background-image: none;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-  }
-  header a.button small {
-    display: inline;
-    font-size: 13px;
-  }
-  #main-content,
-  aside#sidebar {
+
+  #main-content, #sidebar {
     float: none;
     width: 100% ! important;
   }
-  aside#sidebar {
+  #sidebar {
     min-height: 0;
     padding: 20px 0;
     margin-top: 20px;
     background-image: none;
     border-top: solid 1px #ddd;
-  }
-  aside#sidebar a.button {
-    display: none;
-  }
-  #main-content h1:before,
-  #main-content h2:before,
-  #main-content h3:before,
-  #main-content h4:before,
-  #main-content h5:before,
-  #main-content h6:before {
-    padding-right: 0;
-    margin-left: 0;
-    content: none;
+
+    a.button {
+      display: none;
+    }
   }
 
-  #main-content h4.author:before {
-    padding-left: 0;
+  #main-content {
+    h1, h2, h3, h4, h5, h6 {
+      &:before {
+        padding-right: 0;
+        margin-left: 0;
+        content: none;
+      }
+    }
+
+    h4.author:before {
+      padding-left: 0;
+    }
   }
 }
 
