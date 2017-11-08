@@ -20,7 +20,7 @@ One solution to this is to subclass `ImageView` and override `onMeasure()` to ap
  
  ![Dimension Ratio](../assets/images/basics/dimension_create.png)
  
- The view that we've applied this to is constrained to the `top` and `start` edges of the parent `ConstraintLayout` - I will refer to `start` rather than `left` to be friendly towards right-to-left languages. The `end` edge is constrained to a [guideline](guidelines.html), and the bottom edge is unconstrained. Both `layout_width` and `layout_height` are set to `match_constraint` meaning that they will match any constraints that are set. The width of this view will be determined during the layout pass, but the height looks to be indeterminate. However, because of the ratio value, the height can be determined as a function of the width (in the example this is `16:9`).
+ The view that we've applied this to is constrained to the `top` and `start` edges of the parent `ConstraintLayout` - I will refer to `start` rather than `left` to be friendly towards right-to-left languages. The `end` edge is constrained to a [guideline](guidelines.html), and the bottom edge is unconstrained. Both `layout_width` and `layout_height` are set to `match_constraint` meaning that they will match any constraints that are set. The width of this view will be determined during the layout pass, but the height looks to be indeterminate. However, because of the ratio value, the height can be determined as a function of the width (in the example this is `15:9`).
  
  The result of this is that if the width of the view changes then so will the height. We can demonstrate this by moving the guideline that the `end` edge is constrained to:
  
