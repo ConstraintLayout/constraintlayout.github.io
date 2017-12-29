@@ -34,7 +34,7 @@ Once we have a guideline set up we can adjust its position by simply dragging th
 
 ![Position Guideline](../assets/images/basics/guideline_position.gif)
 
-It is worth noting that the `Guideline` will snap to certain posistions - at either of the default keylines (offset `8dp` from either edge), and at `50%` of the parent width. You can see that happening in the example.
+It is worth noting that the `Guideline` will snap to certain positions - at either of the default keylines (offset `8dp` from either edge), and at `50%` of the parent width. You can see that happening in the example.
 
 #### Using guidelines
 
