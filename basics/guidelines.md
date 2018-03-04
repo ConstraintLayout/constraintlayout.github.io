@@ -16,7 +16,7 @@ To create a vertical guideline you do so by right clicking on the blueprint view
 
 ![Create Guideline](../assets/images/basics/guideline_create.gif)
 
-In the current version of Android Studio you will not see the newly created guideline until you click on the blueprint view. If you don't see it after you create the guideline, just click anywhere inside blueprint view and you'll see it.
+In old versions of Android Studio you would not see the newly created guideline until you clicked on the blueprint view. If you are using an old version of Android Studio and don't see the guideline you just created, just click anywhere inside blueprint view and it'll appear.
 
 #### Types of Guideline
 
