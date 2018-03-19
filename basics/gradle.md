@@ -8,7 +8,7 @@ order: 6
 ---
 
 ### Top level build configuration
-You can add ConstraintLayout as you do with other dependencies: By adding it to your gradle `build.xml` file.
+You can add ConstraintLayout as you do with other dependencies: by adding it to your gradle `build.xml` file.
 
 Since ConstaintLayout is part of the Support Library family provided by Google, you have to use the [Google Maven repository](https://developer.android.com/studio/build/dependencies.html#google-maven).
 
@@ -34,7 +34,6 @@ allprojects {
 }
 ```
 
-
 ### Module specific configuration
 With this configuration in place, you simply add the version of ConstraintLayout you want to the module specific gradle file (usually within the `app` module):
 
@@ -45,7 +44,6 @@ dependencies {
   // other libs...
 }
 ```
-
 
 ### Versions
 Currently there are two versions available:
@@ -61,11 +59,7 @@ Features of the 1.1 branch that are missing in the 1.0 release:
 * [Circular positioning](https://developer.android.com/reference/android/support/constraint/ConstraintLayout.html#CircularPositioning)
 * Percent dimensions
 
-
 ### Android Studio's Layout Editor
 Newer features of the ConstraintLayout are best supported in newer versions of Android Studio. While the 3.0.x versions are stable, they might not support all features of the latest betas. On the other hand the 3.1 and 3.2 versions are in active development. They are bound to contain bugs and might not properly support all of the older features.
 
 If you use XML anyway, the specific version of Android Studio is of less importance.
-
-
-
