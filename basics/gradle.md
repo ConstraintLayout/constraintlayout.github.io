@@ -3,7 +3,7 @@ layout: content
 title: Gradle Integration
 author: wolfram
 as_version: 3.0
-cl_version: 1.0.2 or 1.1.0-beta6
+cl_version: 1.0.2 or 1.1.0
 order: 6
 ---
 
@@ -40,17 +40,13 @@ With this configuration in place, you simply add the version of ConstraintLayout
 ```gradle
 dependencies {
   // other libs...
-  implementation 'com.android.support.constraint:constraint-layout:1.1.0-beta6'
+  implementation 'com.android.support.constraint:constraint-layout:1.1.0'
   // other libs...
 }
 ```
 
 ### Versions
-Currently there are two versions available:
-* 1.0.2 - The stable version of the 1.0 release
-* 1.1.0-beta6 - The beta version of the upcoming 1.1 release
-
-All versions are listed on Google's [maven repository](https://dl.google.com/dl/android/maven2/com/android/support/constraint/group-index.xml).
+You should be using `ConstraintLayout` 1.1.0 or newer - please refer to Google's [Maven repository](https://dl.google.com/dl/android/maven2/com/android/support/constraint/group-index.xml) for the most up-to-date information.
 
 Features of the 1.1 branch that are missing in the 1.0 release:
 * [Barriers](barriers.html)
