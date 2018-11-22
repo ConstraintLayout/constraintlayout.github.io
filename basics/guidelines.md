@@ -7,7 +7,7 @@ cl_version: 1.0.2
 order: 3
 ---
 ### What are guidelines?
-Those who are familiar with graphic design tools will be familiar with the concept of guidelines already because they are commonly used. But for those that are not, a guideline is a visual guide which will not be seen at runtime that is used align other views to. This is a bit of an abstract concept, but they are really quite useful once you understand how they work. Material Design recommends the use of [keylines](https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-keylines-spacing) and we'll see how we can easily define these using guidelines.
+Those who are familiar with graphic design tools will be familiar with the concept of guidelines already because they are commonly used. But for those that are not, a guideline is a visual guide which will not be seen at runtime that is used align other views to. This is a bit of an abstract concept, but they are really quite useful once you understand how they work. Material Design recommends the use of [keylines](https://material.io/design/layout/spacing-methods.html#spacing) and we'll see how we can easily define these using guidelines.
 
 Guidelines can be oriented either horizontally or vertically. We'll focus on vertical guidelines in this article, but the same concepts translate in a fairly obvious way for horizontal guidelines.
 
