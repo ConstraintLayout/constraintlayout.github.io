@@ -14,4 +14,3 @@ Besides being a Google Developer Expert for Android, Wiebe Elsinga is Lead Devel
 He has a passion for UX and design, and regularly speaks at tech conferences. And let’s not forget he is a co-founder/organizer of the [GDG Dutch Android User Group](http://www.dutchaug.org/).
 
 Side note: Whisky lover
-

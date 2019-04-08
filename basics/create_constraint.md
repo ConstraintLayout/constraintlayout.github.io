@@ -3,8 +3,8 @@ layout: content
 title: Constraints
 author: mark
 as_version: 2.4 alpha 7
-cl_version: 1.0.2
-order: 1
+cl_version: 1.1+
+order: 2
 ---
 ### What are constraints?
 
@@ -77,7 +77,7 @@ For those who like to understand what's going on under the bonnet/hood, then the
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
@@ -104,7 +104,7 @@ For those who like to understand what's going on under the bonnet/hood, then the
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/textView"
     tools:text="TextView" />
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
 The constraints are the attributes which begin with `app:layout_constraint`. We can see those on all child views of the

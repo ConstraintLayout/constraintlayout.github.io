@@ -4,7 +4,7 @@ surname: Poggi
 admin: true
 twitter: seebrock3r
 github: rock3r
-web: https://tips.seebrock3r.me
+web: https://seebrock3r.me
 photo: photos/seb.jpg
 layout: contributor
 ---
