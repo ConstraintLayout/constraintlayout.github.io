@@ -1,7 +1,7 @@
 ---
 layout: content
 title: Add ConstraintLayout to a project
-author: wolfram, rock3r
+author: seb
 as_version: 3.3
 cl_version: 1.1.x, or 2.0.x
 order: 1
