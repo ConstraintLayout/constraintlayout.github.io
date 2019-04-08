@@ -4,7 +4,7 @@ title: Constraints
 author: mark
 as_version: 2.4 alpha 7
 cl_version: 1.0.2
-order: 1
+order: 2
 ---
 ### What are constraints?
 
