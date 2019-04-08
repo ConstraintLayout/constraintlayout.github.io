@@ -21,7 +21,7 @@ In old versions of Android Studio you would not see the newly created guideline 
 
 #### Types of Guideline
 
-There are three distinct types of guideline. By default a guideline will have a fixed offset from the `start` edge of the parent `ConstraintLayout` (specified in `dp`). The guideline that we just created is offset from the start edge by `16dp`. I'm referring to `start` rather than `left` because it's good practise to keep our layout friendly towards right-to-left languages. 
+There are three distinct types of guideline. By default a guideline will have a fixed offset from the `start` edge of the parent `ConstraintLayout` (specified in `dp`). The guideline that we just created is offset from the start edge by `16dp`. I'm referring to `start` rather than `left` because it's good practise to keep our layout friendly towards right-to-left languages.
 
 The second type of guideline is offset from the `end` edge; and the final type of guideline is positioned at a fraction of the width of the parent `ConstraintLayout`. There is an indicator at the edge of the guideline which shows the type, and we can cycle between the types by repeatedly clicking on this:
 

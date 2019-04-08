@@ -8,7 +8,7 @@ cl_version: 1.1+
 ### Backgrounds
 
 A common pattern in Android layouts is where we need to visually group a collection of views together, and the visual indicator of that grouping is a common background which wraps those views. Normally we would achieve this by using a `ViewGroup` to which the background is applied, set its `android:layout_[width|height]="wrap_content"`, and add the views we wish to group as children. The downside of this is that nested layouts can be expensive during the layout pass, and they also make using `TransitionManager` a little harder, so current best practice is to keep layouts as flat as possible. `ConstraintLayout` allows us to do this with no nesting - keeping the background and all of the children we wish to visually group as immediate children of the `ConstraintLayout`.
-  
+
 #### Some fundamentals
 
 There are a couple of important principles that we need to be aware of. Firstly (apart from some cases when animating) Android will draw views in the order in which they appear within the layout DOM. So if we occupy the same space with two separate views, the one which appears last in the layout DOM will be drawn on top of the one which appears first.
@@ -23,13 +23,13 @@ To create a visual background for a group of views, we must first create a simpl
 
 It is actually quite difficult to see these constraints if we do them all at once, so let's look at them side by side and focus on how we constrain the verticals of the background view (on the right) to the visual children (on the left):
 
-![Background vertical constraints]({{ '/assets/images/cookbook/background_alignment.gif' | absolute_url  }} )
+![Background vertical constraints]({{ '/assets/images/cookbook/background_alignment.gif'|absolute_url}} )
 
 There is a really important thing to note here: When we first create the constraint, a default `android:layout_marginTop='8dp'` is applied to the background view. As a result of this, the top edge is `8dp` lower than the top edge of the view that we're constraining it to. If we consider the expected behaviour if we were to constrain the background to the parent, then this makes perfect sense. However, as we shall see very shortly, we need to properly understand how margins will affect the background view. For now we set the margin to `0dp` to get it to align to the top of the view that we're constraining it to.
 
 Next we must apply exactly the same technique to the horizontal constraints and we can get the background view to appear as though it were a parent `ViewGroup` set to `wrap_content`:
 
-![Background no padding]({{ '/assets/images/cookbook/background_no_padding.png' | absolute_url  }} )
+![Background no padding]({{ '/assets/images/cookbook/background_no_padding.png'|absolute_url}} )
 
 That is the basic principle: draw the background view before any of its visual children, and then constrain it to the visual children at the edges of the visual group. But there is a complication: What if we want to increase the border around the visual children? We have already seen that if we were to add a margin to the background view it would actually move the top edge down making the top visual child draw slightly outside the background rather than increasing the border.
 
@@ -37,12 +37,12 @@ That is the basic principle: draw the background view before any of its visual c
 
 To understand how we can do what we need, it's worth a quick introduction to the Android box model, which is very similar to the HTML box model. Every view has a bounding box which represents the measured size and location within the layout. We can add whitespace around the view by setting either a `android:layout_margin*` or an `android:padding*` value, but margins and paddings add whitespace in subtly different ways. A margin will add space _outside_ the bounding box: it will cause the position of the bounding box to change, but will not affect its measured size. Whereas a padding will add space _inside_ the bounding box: it will not affect the position of the bounding box, but will cause its measured size to change.
 
-When we constrain the background view to another view, then it is actually constrained to the bounding box of that other view. If we were to apply a margin to that other view, then it would move the bounding box and so the background will move with it. However if we apply a padding to the other view then the position of the bounding box will not change (so the background view will not move) but whitespace will be added inside the bounding box. 
+When we constrain the background view to another view, then it is actually constrained to the bounding box of that other view. If we were to apply a margin to that other view, then it would move the bounding box and so the background will move with it. However if we apply a padding to the other view then the position of the bounding box will not change (so the background view will not move) but whitespace will be added inside the bounding box.
 
 If we apply margins to all of the views to which the background view is constrained, then this offsets the background from the edge of the parent; and if we also apply padding to those same views then we can also create an offset of those views from the edge of the background, thus giving a border around them:
 
-![Background padding]({{ '/assets/images/cookbook/background_padding.png' | absolute_url  }} )
-  
+![Background padding]({{ '/assets/images/cookbook/background_padding.png'|absolute_url}} )
+
 ### The XML
 
 Although there are some concepts that we need to understand in order to achieve this effect, the XML is actually quite straightforward once we understand them:

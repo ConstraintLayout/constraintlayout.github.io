@@ -3,5 +3,6 @@ layout: index
 title: Tricks & Tips
 ---
 
-The {{ page.title }} section provides details of how features of other Android Layout types can easily be reproduced using 
-ConstraintLayout. The layout types currently documented are:
+The {{ page.title }} section provides several tips and tricks on how to get the most out of ConstraintLayout, that don't fit in other categories.
+
+In ths section you can find:
