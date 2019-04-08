@@ -3,7 +3,7 @@ layout: content
 title: Barriers
 author: mark
 as_version: 3.0 canary 3
-cl_version: 1.1.0-beta1
+cl_version: 1.1+
 order: 5
 ---
 ### Barriers
@@ -60,7 +60,7 @@ The XML for this is actually pretty simple:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout 
+<androidx.constraintlayout.widget.ConstraintLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   android:layout_width="match_parent"
@@ -86,7 +86,7 @@ The XML for this is actually pretty simple:
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
-  <android.support.constraint.Barrier
+  <androidx.constraintlayout.widget.Barrier
     android:id="@+id/barrier7"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -102,7 +102,7 @@ The XML for this is actually pretty simple:
     app:layout_constraintStart_toEndOf="@+id/barrier7"
     app:layout_constraintTop_toTopOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
 The only thing specific to `Barrier` is the `Barrier` element itself. The `app:barrierDirection` attribute determines the direction of the `Barrier` - in this case it will be positioned at the `end` of the referenced Views.

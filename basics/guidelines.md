@@ -3,7 +3,7 @@ layout: content
 title: Guidelines
 author: mark
 as_version: 2.4 alpha 7
-cl_version: 1.0.2
+cl_version: 1.1+
 order: 4
 ---
 
@@ -54,14 +54,14 @@ So let's take a look at the XML for a guideline and a view constrained to it:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.constraint.Guideline
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,7 +77,7 @@ So let's take a look at the XML for a guideline and a view constrained to it:
         app:layout_constraintTop_toTopOf="parent"
         tools:text="TextView" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
 The guideline itself has an `app:orientation="vertical"` attribute, which obviously declares a vertical guideline (we could also specify a value of `horizontal` here). It also has `app:layout_constraintGuide_begin="16dp"` which positions the guideline `16dp` from the start edge of the parent `ConstraintLayout` - once again, I'll use 'start' rather than 'left'. To position the guideline relative to the end (or right) edge we would use `app:layout_constraintGuide_end="..."` instead; and for a fractional guideline we would use `app:layout_constraintGuide_percent="0.5"` where the value is a number between `0.0` and `1.0` which dictates the fractional offset.

@@ -3,7 +3,7 @@ layout: content
 title: PercentLayout
 author: mark
 as_version: 2.4 alpha 7
-cl_version: 1.0.2
+cl_version: 1.1+
 ---
 ### PercentLayout
 
@@ -27,14 +27,14 @@ The XML for this is as follows:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout 
+<androidx.constraintlayout.widget.ConstraintLayout 
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
 
-  <android.support.constraint.Guideline
+  <androidx.constraintlayout.widget.Guideline
     android:id="@+id/guideline"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -51,7 +51,7 @@ The XML for this is as follows:
     app:layout_constraintEnd_toStartOf="@+id/guideline"
     app:layout_constraintStart_toStartOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
 All of the actual work is done by the guideline, it's just a case of constraining the view to it, and we get the desired width.
@@ -70,13 +70,13 @@ In XML the guideline is identical to the previous example:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
 
-  <android.support.constraint.Guideline
+  <androidx.constraintlayout.widget.Guideline
     android:id="@+id/guideline"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -91,7 +91,7 @@ In XML the guideline is identical to the previous example:
     app:layout_constraintStart_toStartOf="@+id/guideline"
     tools:text="TextView" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
 The difference is in how we constrain the view to it. In this case we specify `app:layout_constraintStart_toStartOf="@+id/guideline"` and set the `android:layout_width` and `android:layout_marginStart` as described for the editor.
@@ -111,7 +111,7 @@ Then if we constrain both horizontal edges, but leave at least one of the vertic
 In XML, we must follow the same rules for the constraints as with the editor, and it is the `app:layout_constraintDimensionRatio` attribute that is doing the magic here:
 
 ```xml
-  <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -129,14 +129,14 @@ In XML, we must follow the same rules for the constraints as with the editor, an
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
   
-    <android.support.constraint.Guideline
+    <androidx.constraintlayout.widget.Guideline
       android:id="@+id/guideline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="vertical"
       app:layout_constraintGuide_percent="0.39" />
   
-  </android.support.constraint.ConstraintLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
   ```
   
   Once again a fuller explanation of this can be found in the article on [dimensions](../basics/dimensions.html).

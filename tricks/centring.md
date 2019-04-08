@@ -3,7 +3,7 @@ layout: content
 title: Centring
 author: mark
 as_version: 2.4 alpha 7
-cl_version: 1.0.2
+cl_version: 1.1+
 ---
 ### Centring
 

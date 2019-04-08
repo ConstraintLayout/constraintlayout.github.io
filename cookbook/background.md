@@ -3,7 +3,7 @@ layout: content
 title: Backgrounds
 author: mark
 as_version: 2.4 alpha 7
-cl_version: 1.0.2
+cl_version: 1.1+
 ---
 ### Backgrounds
 
@@ -49,7 +49,7 @@ Although there are some concepts that we need to understand in order to achieve 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout 
+<androidx.constraintlayout.widget.ConstraintLayout 
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
@@ -97,7 +97,7 @@ Although there are some concepts that we need to understand in order to achieve 
     app:layout_constraintStart_toStartOf="@+id/textView1"
     app:layout_constraintTop_toBottomOf="@+id/textView2"
     tools:text="TextView" />
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
 The `background` appears earlier in the XML than the three `TextView` instances which will be its visual children to ensure that they are drawn on top of the background. The `background` is constrained to the `top`, `start`, and `end` edges of `textView1`; and the `bottom` edge of `textView3`. The margins of `textView1` & `textView3` control the space between the parent edges and `background`; and the paddings control the space between the edges of `background` and where the text in the `TextView` instances is drawn.

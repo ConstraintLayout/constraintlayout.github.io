@@ -3,7 +3,7 @@ layout: content
 title: RelativeLayout
 author: seb
 as_version: 2.4 alpha 7
-cl_version: 1.0.2
+cl_version: 1.1+
 ---
 
 ### Behaviour

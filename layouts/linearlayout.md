@@ -3,7 +3,7 @@ layout: content
 title: LinearLayout
 author: mark
 as_version: 2.4 alpha 7
-cl_version: 1.0.2
+cl_version: 1.1+
 ---
 
 ### LinearLayout
@@ -19,7 +19,7 @@ To achieve this in XML we just create a `app:layout_constraintTop_toBottomOf` co
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout 
+<androidx.constraintlayout.widget.ConstraintLayout 
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
@@ -66,7 +66,7 @@ To achieve this in XML we just create a `app:layout_constraintTop_toBottomOf` co
     tools:text="TextView"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/textView3" />
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
 #### Weighted Behaviour in Editor
@@ -89,7 +89,7 @@ To do this in XML we set `android:layout_width="0dp"` and `app:layout_constraint
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
@@ -132,7 +132,7 @@ To do this in XML we set `android:layout_width="0dp"` and `app:layout_constraint
     app:layout_constraintTop_toTopOf="parent"
     tools:text="TextView" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
 The value in the `app:layout_constraintHorizontal_weight` is applied in exactly the same way as `android:layout_weight` in `LinearLayout` - the available space is divided up based on the ratios of the wieghts of each view. 

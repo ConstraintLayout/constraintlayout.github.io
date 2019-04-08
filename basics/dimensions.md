@@ -3,7 +3,7 @@ layout: content
 title: Dimensions
 author: mark
 as_version: 2.4 alpha 7
-cl_version: 1.0.2
+cl_version: 1.1+
 order: 4
 ---
 ### Dimensions
@@ -31,7 +31,7 @@ One solution to this is to subclass `ImageView` and override `onMeasure()` to ap
   The XML for this is:
   
   ```xml
-  <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -49,14 +49,14 @@ One solution to this is to subclass `ImageView` and override `onMeasure()` to ap
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
   
-    <android.support.constraint.Guideline
+    <androidx.constraintlayout.widget.Guideline
       android:id="@+id/guideline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="vertical"
       app:layout_constraintGuide_percent="0.39" />
   
-  </android.support.constraint.ConstraintLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
   ```
 
 The aspect ratio of the view is set using the `app:layout_constraintDimensionRatio` attribute. This has two components: an orientation, and the ratio. 
