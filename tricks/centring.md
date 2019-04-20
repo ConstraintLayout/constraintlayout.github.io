@@ -28,7 +28,7 @@ In XML this is pretty much the same, we use `app:layout_constraintStart_toStartO
 android:id="@+id/textView"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-app:layout_constraintTop_toBottomOf="parent"
+app:layout_constraintTop_toTopOf="parent"
 app:layout_constraintBottom_toBottomOf="parent"
 app:layout_constraintStart_toStartOf="parent"
 app:layout_constraintEnd_toEndOf="parent"/>
