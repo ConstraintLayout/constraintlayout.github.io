@@ -15,7 +15,7 @@ The basic behaviour of `LinearLayout` is to flow its children in either a horizo
 
 #### Flowed Behaviour in XML
 
-To achieve this in XML we just create a `app:layout_constraintTop_toBottomOf` constraint from a view to the one preceeding it in the flowed layout:
+To achieve this in XML we just create a `app:layout_constraintTop_toBottomOf` constraint from a view to the one preceding it in the flowed layout:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -135,4 +135,4 @@ To do this in XML we set `android:layout_width="0dp"` and `app:layout_constraint
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-The value in the `app:layout_constraintHorizontal_weight` is applied in exactly the same way as `android:layout_weight` in `LinearLayout` - the available space is divided up based on the ratios of the wieghts of each view.
+The value in the `app:layout_constraintHorizontal_weight` is applied in exactly the same way as `android:layout_weight` in `LinearLayout` - the available space is divided up based on the ratios of the weights of each view.
