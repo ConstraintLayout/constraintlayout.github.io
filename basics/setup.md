@@ -3,7 +3,7 @@ layout: content
 title: Add ConstraintLayout to a project
 author: seb
 as_version: 3.3
-cl_version: 1.1+
+cl_version: 2.x
 order: 1
 ---
 
@@ -42,15 +42,13 @@ With this configuration in place, you simply add the version of ConstraintLayout
 ```gradle
 dependencies {
   // other libs...
-  implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha4'
+  implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
   // other libs...
 }
 ```
 
 ### Versions
-You should be using `ConstraintLayout` 1.1.x or newer - please refer to Google's [Maven repository](https://dl.google.com/dl/android/maven2/androidx/constraintlayout/group-index.xml) for the most up-to-date information. Prefer using the AndroidX versions over the older `com.android.support` artifacts as those will not receive any further updates nor bugfixes.
-
-Version 2.0.x is where most development is happening, and while at the time of writing it's still in alpha, it's absolutely stable enough for production usage. Besides, version 2.0 also includes `MotionLayout` which is absent from 1.x.
+You should be using `ConstraintLayout` 1.1.x or newer - please refer to Google's [Maven repository](https://dl.google.com/dl/android/maven2/androidx/constraintlayout/group-index.xml) for the most up-to-date information. Prefer using the AndroidX versions over the older `com.android.support` artifacts as those will not receive any further updates nor bugfixes. Besides, version 2.0 also includes `MotionLayout` which is absent from 1.x.
 
 ### Android Studio's Layout Editor
 Newer features of the ConstraintLayout are best supported in newer versions of Android Studio. Generally speaking, the layout editor tends to be stable even in beta and canary versions of Studio, so it may be worth using a newer version of Studio for the newer features and bugfixes.
