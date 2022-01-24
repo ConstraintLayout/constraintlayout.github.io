@@ -15,21 +15,11 @@ Since ConstaintLayout is part of the [AndroidX libraries](https://developer.andr
 Most likely your project is using other parts of the AndroidX family anyway, but to be sure, here's how to configure your top level `build.gradle` file to use the Google repository:
 
 ```gradle
-buildscript {
-  repositories {
-    google()
-    mavenCentral()
-  }
-
-  dependencies {
-    classpath 'com.android.tools.build:gradle:3.3.2'
-  }
-}
-
+// ... buildscript, plugins, etc.
 allprojects {
   repositories {
     google()
-    mavenCentral()
+    // ... other repositories, e.g. mavenCentral()
   }
 }
 ```
